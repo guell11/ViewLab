@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViewLab.tech - Revolucione sua Presença Digital</title>
+  <meta name="description" content="Crie experiências digitais que atraem, engajam e convertem com tecnologia de ponta.">
+  <meta name="keywords" content="landing page, soluções IA, web design, dark theme, neon, ViewLab.tech">
+
+  <!-- Schema Markup para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebDesignService",
+    "name": "ViewLab.tech",
+    "description": "Transformamos sua presença digital com landing pages, soluções com IA e design inovador."
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #FF7300; /* Neon Laranja */
+      --bg-dark: #121212;
+      --bg-darker: #1e1e1e;
+      --text-light: #e0e0e0;
+      --border-radius: 16px;
+      --transition-speed: 0.3s;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Loading Bar */
+    #loading-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: var(--primary-color);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+      z-index: 10000;
+      transition: width 1s ease;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--bg-darker);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--primary-color);
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      animation: fadeIn 0.5s ease;
+    }
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
+    }
+    .logo span.tech {
+      color: var(--primary-color);
+      font-weight: 400;
+      margin-left: 6px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      font-weight: 500;
+      transition: color var(--transition-speed);
+    }
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+    .btn-orcamento {
+      background: linear-gradient(45deg, var(--primary-color), #ff9a33);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .btn-orcamento:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+
+    /* Menu Hamburguer para Mobile */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-darker);
+        padding: 10px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .btn-orcamento {
+        margin-top: 10px;
+      }
+    }
+
+    /* Botão Voltar ao Topo */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 10500;
+      transition: opacity var(--transition-speed);
+    }
+
+    /* Seção Hero */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      filter: brightness(0.3);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
+    }
+    .hero .content {
+      max-width: 800px;
+      animation: neonFadeIn 1s ease-out;
+    }
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: var(--text-light);
+      text-shadow: 0 0 8px var(--primary-color), 0 0 16px var(--primary-color);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      color: var(--text-light);
+      text-shadow: 0 0 4px rgba(0,0,0,0.7);
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-buttons button {
+      padding: 14px 28px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--text-light);
+      color: var(--text-light);
+    }
+    .cta-buttons button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+
+    /* Animação on-scroll */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+    .animate-on-scroll.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Main Content */
+    main { padding-top: 80px; }
+
+    /* Seção: Sobre Mim */
+    .about {
+      padding: 80px 20px;
+      text-align: center;
+      background: var(--bg-darker);
+      border-radius: var(--border-radius);
+      margin: 40px 20px;
+    }
+    .about h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .about p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      color: var(--text-light);
+    }
+    .about .cta-section {
+      margin-top: 20px;
+    }
+    .about .cta-section button {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .about .cta-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+
+    /* Seção: Experiência */
+    .experience {
+      padding: 80px 20px;
+      background: var(--bg-darker);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .experience h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .experience-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .experience-card {
+      background: var(--bg-dark);
+      border: 1px solid var(--primary-color);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 260px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
+    }
+    .experience-card i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .experience-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--text-light);
+    }
+    .experience-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    /* Seção: Serviços */
+    .services {
+      padding: 80px 20px;
+      background: var(--bg-dark);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .services h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--bg-darker);
+      border: 1px solid var(--primary-color);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 260px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
+    }
+    .service-card i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .service-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--text-light);
+    }
+    .service-card p,
+    .service-card small {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    .services .cta-section {
+      margin-top: 30px;
+    }
+    .services .cta-section button {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .services .cta-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+
+    /* Seção: Projetos */
+    .projects {
+      padding: 80px 20px;
+      background: var(--bg-darker);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .projects h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .project-filters {
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .project-filters input, .project-filters select {
+      padding: 10px;
+      border: 1px solid var(--primary-color);
+      background: var(--bg-dark);
+      color: var(--text-light);
+      border-radius: var(--border-radius);
+      outline: none;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      background: var(--bg-dark);
+      border: 1px solid var(--primary-color);
+      border-radius: var(--border-radius);
+      padding: 15px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      cursor: pointer;
+      position: relative;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
+    }
+    .project img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      margin-bottom: 10px;
+    }
+    .project h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 5px;
+    }
+    .project p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .btn-vermais {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed);
+    }
+    .btn-vermais:hover {
+      transform: scale(1.05);
+    }
+    .project-details {
+      display: none; /* Detalhes ocultos por padrão */
+    }
+    .projects .cta-section {
+      margin-top: 30px;
+    }
+    .projects .cta-section button {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .projects .cta-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+
+    /* Modal para detalhes do projeto */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 11000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.8);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: var(--bg-darker);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      max-width: 800px;
+      width: 90%;
+      color: var(--text-light);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--primary-color);
+    }
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      transition: opacity 0.5s ease;
+      opacity: 0;
+    }
+    .carousel img.active {
+      opacity: 1;
+    }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: var(--primary-color);
+      cursor: pointer;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 50%;
+      transition: background var(--transition-speed);
+    }
+    .carousel-arrow:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .carousel-arrow.left {
+      left: 10px;
+    }
+    .carousel-arrow.right {
+      right: 10px;
+    }
+    .modal-body h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .modal-body p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    .modal-body .btn-like {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      background: transparent;
+      color: var(--primary-color);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform var(--transition-speed);
+    }
+    .modal-body .btn-like:hover {
+      transform: scale(1.05);
+    }
+
+    /* Seção: Depoimentos */
+    .testimonials {
+      padding: 80px 20px;
+      background: var(--bg-dark);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .testimonials h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .testimonial-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: var(--bg-darker);
+      border: 1px solid var(--primary-color);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 320px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      font-style: italic;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
+    }
+    .testimonial-card p {
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    .testimonial-card span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: var(--text-light);
+    }
+
+    /* Seção: Blog */
+    .blog {
+      padding: 80px 20px;
+      background: var(--bg-darker);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .blog h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .blog-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .blog-card {
+      background: var(--bg-dark);
+      border: 1px solid var(--primary-color);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 300px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
+    }
+    .blog-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+    .blog-card .meta {
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+    .blog-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    .blog .cta-section {
+      margin-top: 30px;
+    }
+    .blog .cta-section button {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .blog .cta-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+
+    /* Seção: FAQ */
+    .faq {
+      padding: 80px 20px;
+      background: var(--bg-dark);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .faq h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .faq-item {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--primary-color);
+      padding: 10px 0;
+      cursor: pointer;
+      transition: background var(--transition-speed), max-height 0.3s ease;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+    .faq-item:hover { background: var(--bg-darker); }
+    .faq-item h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 5px;
+    }
+    .faq-item p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+    .faq-item.active p {
+      max-height: 200px;
+      opacity: 1;
+    }
+    .faq .cta-section {
+      margin-top: 30px;
+    }
+    .faq .cta-section button {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .faq .cta-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+
+    /* Seção: Contato */
+    .contact {
+      padding: 80px 20px;
+      background: var(--bg-darker);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .contact h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact form input,
+    .contact form textarea {
+      padding: 12px;
+      border: 1px solid var(--primary-color);
+      border-radius: var(--border-radius);
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-size: 1rem;
+      outline: none;
+      transition: border var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .contact form input:focus,
+    .contact form textarea:focus {
+      border: 1px solid var(--primary-color);
+      box-shadow: 0 0 8px var(--primary-color);
+    }
+    .contact form button {
+      padding: 14px;
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .contact form button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-darker);
+      color: var(--text-light);
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: var(--border-radius);
+      margin: 40px 20px;
+    }
+    footer p { margin-bottom: 10px; }
+    footer a { color: var(--primary-color); }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes neonFadeIn {
+      from { opacity: 0; filter: drop-shadow(0 0 2px var(--primary-color)); }
+      to { opacity: 1; filter: drop-shadow(0 0 12px var(--primary-color)); }
+    }
+
+    /* Media Queries para Responsividade */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn-orcamento {
+        margin-top: 10px;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .service-cards,
+      .experience-cards,
+      .testimonial-cards,
+      .blog-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .service-card,
+      .experience-card,
+      .testimonial-card,
+      .blog-card {
+        width: 90%;
+      }
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact form {
+        width: 90%;
+      }
+      .modal-content {
+        width: 95%;
+        padding: 10px;
+      }
+      .carousel {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Bar -->
+  <div id="loading-bar"></div>
+
+  <!-- Back to Top Button -->
+  <div id="back-to-top" aria-label="Voltar ao Topo" onclick="scrollToSection('hero')">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="logo animate-on-scroll">ViewLab<span class="tech">.tech</span></div>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav role="navigation" aria-label="Menu Principal" class="animate-on-scroll" id="nav-menu">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#experience">Experiência</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#testimonials">Depoimentos</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+    <button class="btn-orcamento animate-on-scroll" aria-label="Solicitar Orçamento" onclick="location.href='#contact'">
+  Solicitar Orçamento
+</button>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero animate-on-scroll" id="hero" aria-label="Seção Principal">
+      <div class="content">
+        <h1>Crie Experiências Digitais que Convertem</h1>
+        <p>Desenvolva sites, landing pages e soluções com IA que atraem, engajam e convertem com tecnologia de ponta.</p>
+        <div class="cta-buttons">
+          <button class="btn-primary" onclick="scrollToSection('contact')">Comece Agora</button>
+          <button class="btn-secondary" onclick="scrollToSection('projects')">Ver Projetos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section class="about animate-on-scroll" id="about" aria-label="Sobre Mim">
+      <h2>Sobre Mim</h2>
+      <p>Olá! Sou um desenvolvedor apaixonado por transformar ideias em experiências digitais únicas e impactantes. Ajudo marcas a se destacarem com soluções inovadoras.</p>
+
+      <div class="cta-section">
+        <button onclick="scrollToSection('contact')">Conheça Mais</button>
+      </div>
+    </section>
+
+    <!-- Experiência -->
+    <section class="experience animate-on-scroll" id="experience" aria-label="Experiência">
+      <h2>Experiência</h2>
+      <div class="experience-cards">
+        <article class="experience-card">
+          <i class="fas fa-code"></i> <!-- Ícone genérico para C# -->
+          <h3>C#</h3>
+          <p>Desenvolvimento de aplicações desktop e web utilizando C# e .NET.</p>
+        </article>
+        <article class="experience-card">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS</h3>
+          <p>Criação de estilos responsivos e modernos para interfaces web.</p>
+        </article>
+        <article class="experience-card">
+          <i class="fab fa-html5"></i>
+          <h3>HTML</h3>
+          <p>Estruturação semântica e acessível de páginas web.</p>
+        </article>
+        <article class="experience-card">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+          <p>Automação, análise de dados e desenvolvimento de scripts.</p>
+        </article>
+        <article class="experience-card">
+          <i class="fab fa-js"></i> <!-- Ícone para JavaScript -->
+          <h3>JavaScript</h3>
+          <p>Desenvolvimento de interações dinâmicas e funcionalidades front-end.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services animate-on-scroll" id="services" aria-label="Serviços">
+      <h2>O Que Oferecemos</h2>
+      <div class="service-cards">
+        <article class="service-card animate-on-scroll">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Design Responsivo</h3>
+          <p>Interfaces que se adaptam a qualquer dispositivo, proporcionando a melhor experiência para seus usuários.</p>
+          <small>Ex.: Otimizamos a experiência mobile para aumentar a taxa de conversão em 30%.</small>
+        </article>
+        <article class="service-card animate-on-scroll">
+          <i class="fas fa-search"></i>
+          <h3>SEO & Performance</h3>
+          <p>Otimização técnica e de conteúdo para posicionar sua marca no topo dos buscadores.</p>
+          <small>Ex.: Aumentamos o tráfego orgânico em 40% para um cliente.</small>
+        </article>
+        <article class="service-card animate-on-scroll">
+          <i class="fas fa-robot"></i>
+          <h3>Soluções com IA</h3>
+          <p>Integração de inteligência artificial para automação, análise de dados e personalização.</p>
+          <small>Ex.: Implantamos chatbots que reduziram o tempo de resposta em 50%.</small>
+        </article>
+        <article class="service-card animate-on-scroll">
+          <i class="fas fa-chart-line"></i>
+          <h3>Conversão Otimizada</h3>
+          <p>Landing pages criadas para transformar visitantes em clientes reais, impulsionando seu faturamento.</p>
+          <small>Ex.: Aumentamos a conversão de um e-commerce em 35% com uma nova estratégia.</small>
+        </article>
+      </div>
+      <div class="cta-section">
+        <button onclick="scrollToSection('contact')">Solicite um Orçamento</button>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section class="projects animate-on-scroll" id="projects" aria-label="Projetos e Soluções">
+      <h2>Projetos & Soluções</h2>
+      <div class="project-filters">
+        <input type="text" id="project-search" placeholder="Pesquisar projetos..." aria-label="Pesquisar Projetos">
+        <select id="category-filter" aria-label="Filtrar por Categoria">
+          <option value="all">Todos</option>
+          <option value="landing">Landing Pages</option>
+          <option value="ia">Soluções com IA</option>
+        </select>
+      </div>
+      <div class="project-grid" id="project-grid">
+        <!-- Projeto 1 -->
+        <article class="project animate-on-scroll" data-title="Landing Clean" data-category="landing">
+          <img src="projeto1.webp" alt="Landing Clean">
+          <h3>Landing Clean</h3>
+          <p>Landing page minimalista para conversão máxima.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['projeto1-detail1.webp', 'projeto1-detail2.webp', 'projeto1-detail3.webp'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Esta landing page foi criada para um cliente do setor financeiro, com um design clean e moderno que enfatiza a conversão.</p>
+          </div>
+        </article>
+        <!-- Projeto 2 -->
+        <article class="project animate-on-scroll" data-title="AI Booster" data-category="ia">
+          <img src="projeto2.webp" alt="AI Booster">
+          <h3>AI Booster</h3>
+          <p>Solução com IA para otimizar processos.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['projeto2-detail1.webp', 'projeto2-detail2.webp'])">Ver Mais</button>
+          <div class="project-details">
+            <p>O projeto "AI Booster" integra inteligência artificial para analisar e otimizar processos empresariais.</p>
+          </div>
+        </article>
+        <!-- Projeto 3 -->
+        <article class="project animate-on-scroll" data-title="E-commerce Pro" data-category="landing">
+          <img src="projeto3.webp" alt="E-commerce Pro">
+          <h3>E-commerce Pro</h3>
+          <p>Plataforma otimizada para vendas online.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['projeto3-detail1.webp', 'projeto3-detail2.webp'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Uma solução completa de e-commerce com foco em conversão e experiência do usuário.</p>
+          </div>
+        </article>
+        <!-- Projeto 4 -->
+        <article class="project animate-on-scroll" data-title="Chatbot IA" data-category="ia">
+          <img src="projeto4.webp" alt="Chatbot IA">
+          <h3>Chatbot IA</h3>
+          <p>Automação de atendimento com IA.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['projeto4-detail1.webp', 'projeto4-detail2.webp'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Chatbot desenvolvido para atendimento 24/7, reduzindo o tempo de resposta.</p>
+          </div>
+        </article>
+      </div>
+      <div class="cta-section">
+        <button onclick="scrollToSection('contact')">Entre em Contato</button>
+      </div>
+    </section>
+
+    <!-- Modal de Projeto -->
+    <div class="modal" id="project-modal" aria-modal="true" role="dialog">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal()">×</span>
+        <div class="modal-body">
+          <div class="carousel">
+            <div class="carousel-arrow left" onclick="prevImage()"><i class="fas fa-chevron-left"></i></div>
+            <div class="carousel-images" id="carousel-images"></div>
+            <div class="carousel-arrow right" onclick="nextImage()"><i class="fas fa-chevron-right"></i></div>
+          </div>
+          <h3 id="modal-title"></h3>
+          <p id="modal-description"></p>
+          <button class="btn-like" onclick="toggleLike(this)"><i class="far fa-heart"></i> Curtir</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Depoimentos -->
+    <section class="testimonials animate-on-scroll" id="testimonials" aria-label="Depoimentos">
+      <h2>O Que Dizem Nossos Clientes</h2>
+      <div class="testimonial-cards">
+        <article class="testimonial-card animate-on-scroll">
+          <p>"A parceria com a ViewLab.tech transformou nossa presença digital. As landing pages aumentaram nossa conversão em 50%!"</p>
+          <span>- Cliente Satisfeito</span>
+        </article>
+        <article class="testimonial-card animate-on-scroll">
+          <p>"Soluções inovadoras com IA que realmente fazem a diferença. Recomendo fortemente!"</p>
+          <span>- Empresa Inovadora</span>
+        </article>
+        <article class="testimonial-card animate-on-scroll">
+          <p>"Design moderno e atendimento excepcional. O suporte 24/7 é um diferencial incrível."</p>
+          <span>- Startup de Sucesso</span>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- Blog -->
+    <section class="blog animate-on-scroll" id="blog" aria-label="Blog">
+      <h2>Insights & Artigos</h2>
+      <div class="blog-cards">
+        <article class="blog-card animate-on-scroll">
+          <h3>Tendências em Web Design 2024</h3>
+          <div class="meta">10/02/2024 • por Ana Silva</div>
+          <p>Descubra as principais inovações e estratégias que estão moldando o futuro do design digital.</p>
+        </article>
+        <article class="blog-card animate-on-scroll">
+          <h3>Como a IA Pode Impulsionar Seu Negócio</h3>
+          <div class="meta">05/02/2024 • por Carlos Souza</div>
+          <p>Entenda como integrar soluções de inteligência artificial para otimizar processos.</p>
+        </article>
+        <article class="blog-card animate-on-scroll">
+          <h3>Dicas de SEO para Landing Pages</h3>
+          <div class="meta">28/01/2024 • por Fernanda Lima</div>
+          <p>Saiba como criar páginas otimizadas para atrair tráfego qualificado.</p>
+        </article>
+      </div>
+      <div class="cta-section">
+        <button onclick="scrollToSection('blog')">Leia Mais Artigos</button>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq animate-on-scroll" id="faq" aria-label="Perguntas Frequentes">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq-item animate-on-scroll" onclick="toggleFaq(this)">
+        <h3>Quanto tempo demora para desenvolver um site?</h3>
+        <p>O prazo varia de acordo com a complexidade do projeto, mas em média nossos sites ficam prontos em 4 a 6 semanas.</p>
+      </div>
+      <div class="faq-item animate-on-scroll" onclick="toggleFaq(this)">
+        <h3>Como funciona o suporte pós-lançamento?</h3>
+        <p>Oferecemos suporte 24/7 e revisões gratuitas durante os primeiros 7 dias após o lançamento.</p>
+      </div>
+      <div class="faq-item animate-on-scroll" onclick="toggleFaq(this)">
+        <h3>Posso solicitar funcionalidades personalizadas?</h3>
+        <p>Com certeza! Trabalhamos de forma personalizada para atender às suas necessidades.</p>
+      </div>
+      <div class="cta-section">
+        <button onclick="scrollToSection('contact')">Ainda Tem Dúvidas? Fale Conosco</button>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contact animate-on-scroll" id="contact" aria-label="Contato">
+      <h2>Fale Conosco</h2>
+      <form id="contact-form" onsubmit="handleFormSubmit(event)" aria-label="Formulário de Contato">
+        <input type="text" id="nome" name="Nome" placeholder="Seu Nome" required aria-label="Seu Nome">
+        <input type="email" id="email" name="Email" placeholder="Seu E-mail" required aria-label="Seu E-mail">
+        <input type="tel" id="telefone" name="Telefone" placeholder="Seu Telefone" required aria-label="Seu Telefone">
+        <textarea id="mensagem" name="Mensagem" rows="4" placeholder="Sua Mensagem" required aria-label="Sua Mensagem"></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ViewLab.tech – Revolucione sua presença digital com inovação e paixão.</p>
+    <p>(35) 99893-0953 | Miguel Penha Reis</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    let currentImageIndex = 0;
+    let images = [];
+
+    // Loading Bar Animation
+    window.addEventListener('load', function() {
+      const loadingBar = document.getElementById('loading-bar');
+      loadingBar.style.width = '100%';
+      setTimeout(() => { loadingBar.style.display = 'none'; }, 1000);
+    });
+
+    // Back-to-Top Visibility
+    window.addEventListener('scroll', function() {
+      const topBtn = document.getElementById('back-to-top');
+      topBtn.style.display = (window.pageYOffset > 300) ? 'block' : 'none';
+    });
+
+    // Smooth Scroll para as seções
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Menu Hamburguer Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+
+    // Sistema de Busca e Filtragem de Projetos
+    const searchInput = document.getElementById('project-search');
+    const categorySelect = document.getElementById('category-filter');
+    const projectGrid = document.getElementById('project-grid');
+
+    function filterProjects() {
+      const searchQuery = searchInput.value.toLowerCase();
+      const selectedCategory = categorySelect.value;
+      const projects = projectGrid.getElementsByClassName('project');
+
+      Array.from(projects).forEach(project => {
+        const title = project.getAttribute('data-title').toLowerCase();
+        const category = project.getAttribute('data-category');
+        if ((title.includes(searchQuery) || searchQuery === '') &&
+            (selectedCategory === 'all' || category === selectedCategory)) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    }
+
+    searchInput.addEventListener('keyup', filterProjects);
+    categorySelect.addEventListener('change', filterProjects);
+
+    // Abrir Modal com Carrossel
+    function openProjectModal(button, projectImages) {
+      const project = button.closest('.project');
+      const title = project.querySelector('h3').textContent;
+      const description = project.querySelector('.project-details p').textContent;
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      const carouselImages = document.getElementById('carousel-images');
+
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      images = projectImages;
+      currentImageIndex = 0;
+
+      carouselImages.innerHTML = '';
+      images.forEach((imgSrc, index) => {
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = `Detalhe ${index + 1}`;
+        img.classList.add('carousel-image');
+        if (index === 0) img.classList.add('active');
+        carouselImages.appendChild(img);
+      });
+
+      document.getElementById('project-modal').style.display = 'flex';
+    }
+
+    // Fechar Modal
+    function closeModal() {
+      document.getElementById('project-modal').style.display = 'none';
+    }
+
+    // Navegar para a Imagem Anterior
+    function prevImage() {
+      const carouselImages = document.querySelectorAll('.carousel-image');
+      carouselImages[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      carouselImages[currentImageIndex].classList.add('active');
+    }
+
+    // Navegar para a Próxima Imagem
+    function nextImage() {
+      const carouselImages = document.querySelectorAll('.carousel-image');
+      carouselImages[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      carouselImages[currentImageIndex].classList.add('active');
+    }
+
+    // Alternar Curtida
+    function toggleLike(button) {
+      const icon = button.querySelector("i");
+      if (icon.classList.contains("far")) {
+        icon.classList.remove("far");
+        icon.classList.add("fas");
+      } else {
+        icon.classList.remove("fas");
+        icon.classList.add("far");
+      }
+    }
+
+    // FAQ Toggle
+    function toggleFaq(element) {
+      element.classList.toggle('active');
+    }
+
+    // Formulário de Contato com WhatsApp
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const mensagem = document.getElementById('mensagem').value;
+      const message = `Nome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone}\nMensagem: ${mensagem}`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/5535998930953?text=${encodedMessage}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // Animação on-scroll
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(elem => {
+      observer.observe(elem);
+    });
+  </script>
+</body>
+</html>
