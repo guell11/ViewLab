@@ -78,7 +78,7 @@
     }
     .logo span.tech {
       color: var(--primary-color);
-      font-weight: 400;
+      font-weight: 480;
       margin-left: 6px;
     }
     nav ul {
@@ -588,6 +588,7 @@
       font-size: 1.5rem;
       cursor: pointer;
       color: var(--primary-color);
+      z-index: 9999;
     }
     .carousel {
       position: relative;
@@ -948,6 +949,51 @@
       }
     }
   </style>
+
+  <!-- ======== INÍCIO - Estilos do Carrossel de Projetos ======== -->
+  <style>
+    .projetos-carrossel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    .projetos-carrossel .slides-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .projetos-carrossel .slide-projeto {
+      min-width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+    }
+    /* Botões de navegação do carrossel */
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: var(--primary-color);
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      transition: background 0.3s;
+      z-index: 2;
+    }
+    .carousel-nav:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .carousel-nav.prev {
+      left: 10px;
+    }
+    .carousel-nav.next {
+      right: 10px;
+    }
+  </style>
+  <!-- ======== FIM - Estilos do Carrossel de Projetos ======== -->
+
 </head>
 <body>
   <!-- Loading Bar -->
@@ -977,7 +1023,6 @@
       </ul>
     </nav>
   </header>
-
 
     <!-- Seção Hero -->
     <section class="hero animate-on-scroll" id="hero" aria-label="Seção Principal">
@@ -1066,8 +1111,6 @@
     <section class="banner-section animate-on-scroll" id="banner">
       <img src="static/bannerlogo.png" alt="Banner Logo">
     </section>
-
-
 
     <!-- Projetos -->
     <section class="projects animate-on-scroll" id="projects" aria-label="Projetos e Soluções">
@@ -1233,7 +1276,6 @@
         <button type="submit">Enviar Mensagem</button>
       </form>
     </section>
-  
 
   <!-- Footer -->
   <footer>
@@ -1388,5 +1430,94 @@
       observer.observe(elem);
     });
   </script>
+
+  <!-- ======== INÍCIO - Código do Carrossel de Projetos ======== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Função para configurar o carrossel na seção "Projetos & Soluções"
+      function setupProjectsCarousel() {
+        const projectGrid = document.getElementById("project-grid");
+        if (!projectGrid) return; // Verifica se o container existe
+
+        // Obter todos os projetos existentes (mantendo o sistema "ver mais" intacto)
+        const projects = Array.from(projectGrid.getElementsByClassName("project"));
+        if (projects.length === 0) return;
+
+        const projectsPerSlide = 3;
+        const totalSlides = Math.ceil(projects.length / projectsPerSlide);
+
+        // Criar a estrutura do carrossel
+        const carouselContainer = document.createElement("div");
+        carouselContainer.classList.add("projetos-carrossel");
+
+        // Container para os slides
+        const slidesContainer = document.createElement("div");
+        slidesContainer.classList.add("slides-container");
+
+        // Agrupar os projetos em slides
+        for (let i = 0; i < totalSlides; i++) {
+          const slide = document.createElement("div");
+          slide.classList.add("slide-projeto");
+          for (let j = i * projectsPerSlide; j < (i * projectsPerSlide) + projectsPerSlide && j < projects.length; j++) {
+            slide.appendChild(projects[j]);
+          }
+          slidesContainer.appendChild(slide);
+        }
+
+        // Se houver mais de um slide e o último estiver incompleto,
+        // clonar o último projeto do slide anterior e inseri-lo no início do último slide
+        if (totalSlides > 1) {
+          const lastSlide = slidesContainer.lastChild;
+          if (lastSlide.childElementCount < projectsPerSlide) {
+            const previousSlide = slidesContainer.children[totalSlides - 2];
+            if (previousSlide && previousSlide.lastElementChild) {
+              const cloneProject = previousSlide.lastElementChild.cloneNode(true);
+              lastSlide.insertBefore(cloneProject, lastSlide.firstChild);
+            }
+          }
+        }
+
+        // Limpar o conteúdo original e inserir o carrossel
+        projectGrid.innerHTML = "";
+        carouselContainer.appendChild(slidesContainer);
+
+        // Criar botões de navegação
+        const prevButton = document.createElement("button");
+        prevButton.classList.add("carousel-nav", "prev");
+        prevButton.innerHTML = "&lt;";
+        const nextButton = document.createElement("button");
+        nextButton.classList.add("carousel-nav", "next");
+        nextButton.innerHTML = "&gt;";
+        carouselContainer.appendChild(prevButton);
+        carouselContainer.appendChild(nextButton);
+
+        projectGrid.appendChild(carouselContainer);
+
+        let currentSlide = 0;
+        function updateCarousel() {
+          slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        prevButton.addEventListener("click", function() {
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+          updateCarousel();
+        });
+
+        nextButton.addEventListener("click", function() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateCarousel();
+        });
+
+        // (Opcional) Atualização automática do slide:
+        // setInterval(function() {
+        //   currentSlide = (currentSlide + 1) % totalSlides;
+        //   updateCarousel();
+        // }, 5000);
+      }
+
+      setupProjectsCarousel();
+    });
+  </script>
+  <!-- ======== FIM - Código do Carrossel de Projetos ======== -->
 </body>
 </html>
