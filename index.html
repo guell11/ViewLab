@@ -229,15 +229,81 @@
       box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
     }
 
-    /* Animação on-scroll */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 1s ease;
+    /* Banner com a imagem bannerlogo.png */
+    .banner-section {
+      position: relative;
+      text-align: center;
+      margin: 40px 20px;
     }
-    .animate-on-scroll.in-view {
-      opacity: 1;
-      transform: translateY(0);
+    .banner-section img {
+      width: 80%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Timeline: Por que ter um site? */
+    .why-website-timeline {
+      padding: 80px 20px;
+      text-align: center;
+      background: var(--bg-darker);
+      border-radius: var(--border-radius);
+      margin: 40px 20px;
+    }
+    .why-website-timeline h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 0;
+      max-width: 600px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #FFA500;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+    }
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 4px solid #FFA500;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-item:nth-child(odd)::before {
+      right: -10px;
+    }
+    .timeline-item:nth-child(even)::before {
+      left: -10px;
     }
 
     /* Main Content */
@@ -473,7 +539,7 @@
       transform: scale(1.05);
     }
     .project-details {
-      display: none; /* Detalhes ocultos por padrão */
+      display: none;
     }
     .projects .cta-section {
       margin-top: 30px;
@@ -895,9 +961,7 @@
   <!-- Header -->
   <header role="banner">
     <div class="logo animate-on-scroll">ViewLab<span class="tech">.tech</span></div>
-    <div class="menu-toggle" id="menu-toggle">
-     
-    </div>
+    <div class="menu-toggle" id="menu-toggle"></div>
     <nav role="navigation" aria-label="Menu Principal" class="animate-on-scroll" id="nav-menu">
       <ul>
         <li><a href="#hero">Home</a></li>
@@ -909,15 +973,13 @@
         <li><a href="#blog">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contato</a></li>
+        <li><a href="#contact" class="btn-orcamento">Solicitar Orçamento</a></li>
       </ul>
     </nav>
-    <button class="btn-orcamento animate-on-scroll" aria-label="Solicitar Orçamento" onclick="location.href='#contact'">
-  Solicitar Orçamento
-</button>
   </header>
 
-  <main>
-    <!-- Hero Section -->
+
+    <!-- Seção Hero -->
     <section class="hero animate-on-scroll" id="hero" aria-label="Seção Principal">
       <div class="content">
         <h1>Crie Experiências Digitais que Convertem</h1>
@@ -933,7 +995,6 @@
     <section class="about animate-on-scroll" id="about" aria-label="Sobre Mim">
       <h2>Sobre Mim</h2>
       <p>Olá! Meu nome é Miguel e sou um desenvolvedor apaixonado por transformar ideias em experiências digitais únicas e impactantes. Ajudo marcas a se destacarem com soluções inovadoras.</p>
-
       <div class="cta-section">
         <button onclick="scrollToSection('contact')">Conheça Mais</button>
       </div>
@@ -944,7 +1005,7 @@
       <h2>Experiência</h2>
       <div class="experience-cards">
         <article class="experience-card">
-          <i class="fas fa-code"></i> <!-- Ícone genérico para C# -->
+          <i class="fas fa-code"></i>
           <h3>C#</h3>
           <p>Desenvolvimento de aplicações desktop e web utilizando C# e .NET.</p>
         </article>
@@ -964,7 +1025,7 @@
           <p>Automação, análise de dados e desenvolvimento de scripts.</p>
         </article>
         <article class="experience-card">
-          <i class="fab fa-js"></i> <!-- Ícone para JavaScript -->
+          <i class="fab fa-js"></i>
           <h3>JavaScript</h3>
           <p>Desenvolvimento de interações dinâmicas e funcionalidades front-end.</p>
         </article>
@@ -979,31 +1040,34 @@
           <i class="fas fa-mobile-alt"></i>
           <h3>Design Responsivo</h3>
           <p>Interfaces que se adaptam a qualquer dispositivo, proporcionando a melhor experiência para seus usuários.</p>
-          <small></small>
         </article>
         <article class="service-card animate-on-scroll">
           <i class="fas fa-search"></i>
           <h3>SEO & Performance</h3>
           <p>Otimização técnica e de conteúdo para posicionar sua marca no topo dos buscadores.</p>
-          <small></small>
         </article>
         <article class="service-card animate-on-scroll">
           <i class="fas fa-robot"></i>
           <h3>Soluções com IA</h3>
           <p>Integração de inteligência artificial para automação, análise de dados e personalização.</p>
-          <small></small>
         </article>
         <article class="service-card animate-on-scroll">
           <i class="fas fa-chart-line"></i>
           <h3>Conversão Otimizada</h3>
           <p>Landing pages criadas para transformar visitantes em clientes reais, impulsionando seu faturamento.</p>
-          <small></small>
         </article>
       </div>
       <div class="cta-section">
         <button onclick="scrollToSection('contact')">Solicite um Orçamento</button>
       </div>
     </section>
+
+    <!-- Banner com a imagem bannerlogo.png -->
+    <section class="banner-section animate-on-scroll" id="banner">
+      <img src="static/bannerlogo.png" alt="Banner Logo">
+    </section>
+
+
 
     <!-- Projetos -->
     <section class="projects animate-on-scroll" id="projects" aria-label="Projetos e Soluções">
@@ -1014,7 +1078,6 @@
           <option value="all">Todos</option>
           <option value="landing">Landing Pages</option>
           <option value="IA">IA</option>
-
         </select>
       </div>
       <div class="project-grid" id="project-grid">
@@ -1025,60 +1088,53 @@
           <p>Landing page sofisticada para promover a beleza e cuidados com a pele.</p>
           <button class="btn-vermais" onclick="openProjectModal(this, ['static/cosmeticos2.png', 'static/cosmeticos3.png', 'static/cosmeticos4.png', 'static/cosmeticos5.png'])">Ver Mais</button>
           <div class="project-details">
-            <p>Esta landing page foi desenvolvida para uma marca de cosméticos premium, com um design elegante e funcional, focado na conversão e experiência do usuário, destacando produtos e benefícios para a pele.</p>
+            <p>Esta landing page foi desenvolvida para uma marca de cosméticos premium, com um design elegante e funcional, focado na conversão e experiência do usuário.</p>
           </div>
         </article>
 
-        <!-- projeto 2-->
+        <!-- Projeto 2 -->
+        <article class="project animate-on-scroll" data-title="Consultoria Estratégica" data-category="landing">
+          <img src="static/consultoria.png" alt="Consultoria Estratégica">
+          <h3>Consultoria Estratégica</h3>
+          <p>Landing page sofisticada para promover serviços de consultoria empresarial.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['static/consultoria1.png', 'static/consultoria2.png', 'static/consultoria3.png', 'static/consultoria4.png', 'static/consultoria5.png'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Esta landing page foi desenvolvida para uma empresa de consultoria, destacando os benefícios de uma assessoria estratégica.</p>
+          </div>
+        </article>
 
-    <article class="project animate-on-scroll" data-title="Consultoria Estratégica" data-category="landing">
-      <img src="static/consultoria.png" alt="Consultoria Estratégica">
-      <h3>Consultoria Estratégica</h3>
-      <p>Landing page sofisticada para promover serviços de consultoria empresarial.</p>
-      <button class="btn-vermais" onclick="openProjectModal(this, ['static/consultoria1.png', 'static/consultoria2.png', 'static/consultoria3.png', 'static/consultoria4.png', 'static/consultoria5.png'])">Ver Mais</button>
-      <div class="project-details">
-        <p>Esta landing page foi desenvolvida para uma empresa de consultoria, com um design elegante e funcional, focado na conversão de leads e na experiência do cliente, destacando os serviços oferecidos e os benefícios de uma consultoria estratégica para negócios.</p>
-      </div>
-    </article>
+        <!-- Projeto 3 -->
+        <article class="project animate-on-scroll" data-title="Site Completo E-commerce" data-category="ecommerce">
+          <img src="static/ecommerce.png" alt="Site Completo E-commerce">
+          <h3>Site Completo E-commerce</h3>
+          <p>Plataforma robusta e intuitiva para uma experiência de compra única.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['static/ecommerce1.png', 'static/ecommerce2.png', 'static/ecommerce3.png', 'static/ecommerce4.png', 'static/ecommerce5.png', 'static/ecommerce6.png', 'static/ecommerce7.png', 'static/ecommerce8.png', 'static/ecommerce9.png', 'static/ecommerce10.png'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Desenvolvemos um site de e-commerce completo com design responsivo, integração com métodos de pagamento e suporte em tempo real.</p>
+          </div>
+        </article>
 
-                <!-- projeto 3-->
-    <article class="project animate-on-scroll" data-title="Site Completo E-commerce" data-category="ecommerce">
-      <img src="static/ecommerce.png" alt="Site Completo E-commerce">
-      <h3>Site Completo E-commerce</h3>
-      <p>Plataforma robusta e intuitiva, integrando todas as funcionalidades essenciais para uma experiência de compra única.</p>
-      <button class="btn-vermais" onclick="openProjectModal(this, ['static/ecommerce1.png', 'static/ecommerce2.png', 'static/ecommerce3.png', 'static/ecommerce4.png', 'static/ecommerce5.png', 'static/ecommerce6.png', 'static/ecommerce7.png', 'static/ecommerce8.png', 'static/ecommerce9.png', 'static/ecommerce10.png', ])">Ver Mais</button>
-      <div class="project-details">
-        <p>Desenvolvemos um site completo de e-commerce, com design responsivo, navegação intuitiva, integração com diversos métodos de pagamento e sistemas logísticos. Além disso, implementamos um chatbot com inteligência artificial para oferecer suporte em tempo real, tirando dúvidas e auxiliando os clientes durante a compra, garantindo uma experiência de usuário diferenciada e eficiente.</p>
-      </div>
-    </article>
+        <!-- Projeto 4 -->
+        <article class="project animate-on-scroll" data-title="Cooktura - App de Receitas Personalizadas" data-category="IA">
+          <img src="static/cooktura1.png" alt="Cooktura - App de Receitas Personalizadas">
+          <h3>Cooktura - App de Receitas Personalizadas</h3>
+          <p>Aplicativo inteligente que cria receitas personalizadas conforme suas preferências.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['static/cooktura1.png', 'static/cooktura2.png'])">Ver Mais</button>
+          <div class="project-details">
+            <p>O app utiliza IA para sugerir receitas baseadas no que você tem em casa e suas preferências alimentares.</p>
+          </div>
+        </article>
 
-        
-        <!-- projeto 4-->
-
-    <article class="project animate-on-scroll" data-title="Cooktura - App de Receitas Personalizadas" data-category="IA">
-      <img src="static/cooktura1.png" alt="Cooktura - App de Receitas Personalizadas">
-      <h3>Cooktura - App de Receitas Personalizadas</h3>
-      <p>Um aplicativo inteligente que te ajuda a cozinhar de forma prática e personalizada, com receitas feitas sob medida para o que você tem na despensa e suas preferências.</p>
-      <button class="btn-vermais" onclick="openProjectModal(this, ['static/cooktura1.png', 'static/cooktura2.png', '])">Ver Mais</button>
-      <div class="project-details">
-        <p>O app Cooktura usa inteligência artificial para sugerir receitas personalizadas com base no que você tem disponível em casa, o tempo que você tem para cozinhar e até suas necessidades alimentares, como dietas específicas ou alergias. Seja para preparar uma refeição rápida ou um prato mais elaborado, o Cooktura garante opções criativas e saudáveis, adequadas ao seu estilo de vida.</p>
-      </div>
-    </article>
-
-        <!-- projeto 5-->
-
-    <article class="project animate-on-scroll" data-title="Sistema de IA para Empreendedores" data-category="IA">
-      <img src="static/ia1.png" alt="Sistema de IA para Empreendedores">
-      <h3>Sistema de IA para Empreendedores</h3>
-      <p>Uma solução inteligente que auxilia empreendedores, desde iniciantes até grandes empresários, a desenvolverem suas habilidades e estratégias para o sucesso.</p>
-      <button class="btn-vermais" onclick="openProjectModal(this, ['static/ia1.png', 'static/ia2.png'])">Ver Mais</button>
-      <div class="project-details">
-        <p>Desenvolvemos um sistema de IA inovador que ajuda empreendedores a descobrir e potencializar suas habilidades. A IA faz perguntas sobre habilidades e experiências, ensina técnicas de copywriting e estratégias de vendas, e oferece orientações sobre como gerir o negócio, seja com um orçamento de 10 reais ou 1 milhão. A proposta é tornar qualquer pessoa, independentemente de seu ponto de partida, capaz de empreender com confiança e eficiência.</p>
-      </div>
-    </article>
-
-
-
+        <!-- Projeto 5 -->
+        <article class="project animate-on-scroll" data-title="Sistema de IA para Empreendedores" data-category="IA">
+          <img src="static/ia1.png" alt="Sistema de IA para Empreendedores">
+          <h3>Sistema de IA para Empreendedores</h3>
+          <p>Solução inovadora que auxilia empreendedores no desenvolvimento de estratégias de sucesso.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['static/ia1.png', 'static/ia2.png'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Este sistema de IA ajuda empreendedores a identificar oportunidades e aprimorar suas estratégias de negócio.</p>
+          </div>
+        </article>
       </div>
       <div class="cta-section">
         <button onclick="scrollToSection('contact')">Entre em Contato</button>
@@ -1119,7 +1175,6 @@
           <span>- Startup de Sucesso</span>
         </article>
       </div>
-
     </section>
 
     <!-- Blog -->
@@ -1178,7 +1233,7 @@
         <button type="submit">Enviar Mensagem</button>
       </form>
     </section>
-  </main>
+  
 
   <!-- Footer -->
   <footer>
