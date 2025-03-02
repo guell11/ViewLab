@@ -1434,27 +1434,31 @@
   <!-- ======== INÍCIO - Código do Carrossel de Projetos ======== -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Função para configurar o carrossel na seção "Projetos & Soluções"
-      function setupProjectsCarousel() {
-        const projectGrid = document.getElementById("project-grid");
-        if (!projectGrid) return; // Verifica se o container existe
+      // Armazena o conteúdo original da grid para reconfigurar o carrossel quando necessário
+      const projectGrid = document.getElementById("project-grid");
+      const originalProjectsHTML = projectGrid.innerHTML;
+      let currentProjectsPerSlide = null;
 
-        // Obter todos os projetos existentes (mantendo o sistema "ver mais" intacto)
+      function setupProjectsCarousel() {
+        // Define quantos projetos por slide: 1 para telas <=768px; 3 para telas maiores.
+        let projectsPerSlide = window.innerWidth <= 768 ? 1 : 3;
+        if (projectsPerSlide === currentProjectsPerSlide) return;
+        currentProjectsPerSlide = projectsPerSlide;
+
+        // Restaura os projetos originais
+        projectGrid.innerHTML = originalProjectsHTML;
         const projects = Array.from(projectGrid.getElementsByClassName("project"));
         if (projects.length === 0) return;
 
-        const projectsPerSlide = 3;
         const totalSlides = Math.ceil(projects.length / projectsPerSlide);
 
-        // Criar a estrutura do carrossel
+        // Cria a estrutura do carrossel
         const carouselContainer = document.createElement("div");
         carouselContainer.classList.add("projetos-carrossel");
-
-        // Container para os slides
         const slidesContainer = document.createElement("div");
         slidesContainer.classList.add("slides-container");
 
-        // Agrupar os projetos em slides
+        // Agrupa os projetos em slides
         for (let i = 0; i < totalSlides; i++) {
           const slide = document.createElement("div");
           slide.classList.add("slide-projeto");
@@ -1465,7 +1469,7 @@
         }
 
         // Se houver mais de um slide e o último estiver incompleto,
-        // clonar o último projeto do slide anterior e inseri-lo no início do último slide
+        // clona o último projeto do slide anterior e insere-o no início do último slide
         if (totalSlides > 1) {
           const lastSlide = slidesContainer.lastChild;
           if (lastSlide.childElementCount < projectsPerSlide) {
@@ -1477,11 +1481,10 @@
           }
         }
 
-        // Limpar o conteúdo original e inserir o carrossel
         projectGrid.innerHTML = "";
         carouselContainer.appendChild(slidesContainer);
 
-        // Criar botões de navegação
+        // Cria botões de navegação
         const prevButton = document.createElement("button");
         prevButton.classList.add("carousel-nav", "prev");
         prevButton.innerHTML = "&lt;";
@@ -1507,15 +1510,10 @@
           currentSlide = (currentSlide + 1) % totalSlides;
           updateCarousel();
         });
-
-        // (Opcional) Atualização automática do slide:
-        // setInterval(function() {
-        //   currentSlide = (currentSlide + 1) % totalSlides;
-        //   updateCarousel();
-        // }, 5000);
       }
 
       setupProjectsCarousel();
+      window.addEventListener("resize", setupProjectsCarousel);
     });
   </script>
   <!-- ======== FIM - Código do Carrossel de Projetos ======== -->
