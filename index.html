@@ -1,61 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+  <link rel="icon" href="static/logo1.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ViewLab.tech - Miguel Penha Reis - Revolucione sua Presença Digital</title>
-  <meta name="description" content="Desenvolvedor Miguel Penha Reis (15 anos) cria experiências digitais que atraem, engajam e convertem com tecnologia de ponta e soluções IA.">
-  <meta name="keywords" content="Miguel Penha Reis, desenvolvedor 15 anos, landing page, soluções IA, web design, dark theme, neon, ViewLab.tech, Lunar, MindFLOW, Aurora Oportunidades, Cooktura, UPAÉFLIX, AGNER, FitProgress">
+  <title>ViewLab.tech - Revolucione sua Presença Digital</title>
+  <meta name="description" content="Crie experiências digitais que atraem, engajam e convertem com tecnologia de ponta.">
+  <meta name="keywords" content="landing page, soluções IA, web design, dark theme, neon, ViewLab.tech">
 
   <!-- Schema Markup para SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Miguel Penha Reis",
-    "jobTitle": "Desenvolvedor Full-Stack & Especialista em IA",
-    "url": "https://viewlab.tech", // Replace with your actual domain if different
-    "sameAs": [
-      // Add links to your social profiles if any
-      // "https://www.linkedin.com/in/miguelpenhareis/",
-      // "https://github.com/miguelpenhareis/"
-    ],
-    "description": "Desenvolvedor de 15 anos apaixonado por criar soluções digitais inovadoras, incluindo websites, landing pages e aplicações com Inteligência Artificial.",
-    "alumniOf": "ViewLab.tech" // Or the name of your initiative/company
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
     "@type": "WebDesignService",
-    "name": "ViewLab.tech",
-    "description": "Transformamos sua presença digital com landing pages, soluções com IA e design inovador, por Miguel Penha Reis.",
-    "provider": {
-      "@type": "Person",
-      "name": "Miguel Penha Reis"
-    }
+    "name": "ViewLab",
+    "description": "Transformamos sua presença digital com landing pages, soluções com IA e design inovador."
   }
   </script>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
     :root {
       --primary-color: #FF7300; /* Neon Laranja */
-      --primary-hover-color: #ff8c00;
-      --secondary-color: #00e5ff; /* Neon Ciano - para contraste sutil */
-      --bg-dark: #0a0a0a; /* Um pouco mais escuro para mais contraste */
-      --bg-medium: #121212;
-      --bg-light: #1e1e1e;
-      --text-light: #f0f0f0;
-      --text-medium: #c0c0c0;
-      --border-radius: 12px; /* Ligeiramente menor para um look mais sharp */
+      --bg-dark: #121212;
+      --bg-darker: #1e1e1e;
+      --text-light: #e0e0e0;
+      --border-radius: 16px;
       --transition-speed: 0.3s;
-      --box-shadow-neon: 0 0 8px var(--primary-color), 0 0 15px var(--primary-color), 0 0 25px rgba(255, 115, 0, 0.5);
-      --box-shadow-subtle: 0 4px 15px rgba(0,0,0,0.2);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -64,7 +40,7 @@
       background: var(--bg-dark);
       color: var(--text-light);
       overflow-x: hidden;
-      line-height: 1.7; /* Aumentado para melhor legibilidade */
+      line-height: 1.6;
     }
     a { text-decoration: none; color: inherit; }
 
@@ -76,7 +52,7 @@
       width: 0;
       height: 4px;
       background: var(--primary-color);
-      box-shadow: var(--box-shadow-neon);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
       z-index: 10000;
       transition: width 1s ease;
     }
@@ -86,121 +62,110 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.85); /* Fundo com transparência */
-      backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+      background: var(--bg-darker);
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 115, 0, 0.3);
+      border-bottom: 1px solid var(--primary-color);
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
       animation: fadeIn 0.5s ease;
     }
     .logo {
       font-family: 'Poppins', sans-serif;
-      font-size: 2rem; /* Aumentado */
+      font-size: 1.8rem;
       font-weight: 700;
       color: var(--text-light);
       text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
     }
     .logo span.tech {
       color: var(--primary-color);
-      font-weight: 600; /* Um pouco mais de peso */
+      font-weight: 480;
       margin-left: 6px;
     }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 25px; /* Aumentado */
+      gap: 20px;
     }
     nav ul li a {
       font-weight: 500;
-      font-size: 0.95rem;
-      transition: color var(--transition-speed), text-shadow var(--transition-speed);
+      transition: color var(--transition-speed);
     }
     nav ul li a:hover {
       color: var(--primary-color);
-      text-shadow: 0 0 5px var(--primary-color);
     }
     .btn-orcamento {
-      background: linear-gradient(45deg, var(--primary-color), var(--primary-hover-color));
+      background: linear-gradient(45deg, var(--primary-color), #ff9a33);
       color: var(--bg-dark);
-      padding: 10px 20px; /* Ajustado */
+      padding: 12px 24px;
       border: none;
       border-radius: var(--border-radius);
       cursor: pointer;
       font-weight: bold;
-      font-size: 0.9rem;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
     .btn-orcamento:hover {
       transform: scale(1.05);
-      box-shadow: var(--box-shadow-neon);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
     }
 
     /* Menu Hamburguer para Mobile */
     .menu-toggle {
       display: none;
-      font-size: 2.2rem; /* Aumentado */
+      font-size: 2rem;
       color: var(--primary-color);
       cursor: pointer;
-      background: none;
-      border: none;
     }
-    @media (max-width: 992px) { /* Ponto de quebra ajustado */
-      .menu-toggle { display: block; }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
       nav ul {
         display: none;
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         position: absolute;
-        top: 70px; /* Altura do header */
+        top: 60px;
         left: 0;
         width: 100%;
-        background: var(--bg-medium);
-        padding: 20px;
-        border-top: 1px solid rgba(255, 115, 0, 0.3);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        background: var(--bg-darker);
+        padding: 10px;
       }
-      nav ul.active { display: flex; }
-      .btn-orcamento { margin-top: 15px; width: 100%; text-align: center;}
+      nav ul.active {
+        display: flex;
+      }
+      .btn-orcamento {
+        margin-top: 10px;
+      }
     }
 
     /* Botão Voltar ao Topo */
     #back-to-top {
       position: fixed;
-      bottom: 30px; /* Aumentado */
-      right: 30px;  /* Aumentado */
+      bottom: 20px;
+      right: 20px;
       background: var(--primary-color);
       color: var(--bg-dark);
-      width: 50px; /* Tamanho fixo */
-      height: 50px;/* Tamanho fixo */
+      padding: 10px;
       border-radius: 50%;
       cursor: pointer;
       display: none;
       z-index: 10500;
-      transition: opacity var(--transition-speed), transform var(--transition-speed);
-      box-shadow: var(--box-shadow-neon);
-      text-align: center;
-      line-height: 50px; /* Para centralizar o ícone */
-      font-size: 1.2rem;
-    }
-    #back-to-top:hover {
-        transform: scale(1.1);
+      transition: opacity var(--transition-speed);
     }
 
     /* Seção Hero */
     .hero {
       position: relative;
-      min-height: 90vh; /* Altura mínima */
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      padding: 40px 20px;
-      background: url('static/hero_bg_coding.jpg') no-repeat center center/cover; /* Imagem de fundo fallback */
     }
-     .hero video { /* MANTIDO, mas com fallback */
+    .hero video {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -209,36 +174,33 @@
       min-height: 100%;
       object-fit: cover;
       z-index: -2;
-      filter: brightness(0.25); /* Mais escuro para texto destacar */
+      filter: brightness(0.3);
     }
-    .hero::after { /* Overlay mais sutil se o vídeo carregar */
+    .hero::after {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(rgba(10,10,10,0.7), rgba(10,10,10,0.9));
+      background: rgba(0,0,0,0.6);
       z-index: -1;
     }
     .hero .content {
-      max-width: 900px; /* Aumentado */
-      animation: neonFadeIn 1s ease-out 0.5s forwards; /* Atraso para loading bar */
-      opacity:0; /* Inicia invisível */
+      max-width: 800px;
+      animation: neonFadeIn 1s ease-out;
     }
     .hero h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsivo */
-      margin-bottom: 25px;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
       color: var(--text-light);
-      text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px rgba(255,115,0,0.7);
-      font-weight: 700;
+      text-shadow: 0 0 8px var(--primary-color), 0 0 16px var(--primary-color);
     }
     .hero p {
-      font-size: clamp(1rem, 2.5vw, 1.4rem); /* Responsivo */
-      margin-bottom: 40px;
-      color: var(--text-medium);
-      text-shadow: 0 0 5px rgba(0,0,0,0.8);
-      font-weight: 400;
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      color: var(--text-light);
+      text-shadow: 0 0 4px rgba(0,0,0,0.7);
     }
     .cta-buttons {
       display: flex;
@@ -247,20 +209,17 @@
       flex-wrap: wrap;
     }
     .cta-buttons button {
-      padding: 15px 35px; /* Aumentado */
+      padding: 14px 28px;
       border: none;
       border-radius: var(--border-radius);
       cursor: pointer;
-      font-size: 1.1rem; /* Aumentado */
-      font-weight: 600; /* Aumentado */
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
-      text-transform: uppercase; /* Estilo adicionado */
-      letter-spacing: 0.5px; /* Estilo adicionado */
+      font-size: 1rem;
+      font-weight: bold;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
     .btn-primary {
       background: var(--primary-color);
       color: var(--bg-dark);
-      box-shadow: var(--box-shadow-subtle);
     }
     .btn-secondary {
       background: transparent;
@@ -268,240 +227,338 @@
       color: var(--text-light);
     }
     .cta-buttons button:hover {
-      transform: translateY(-3px) scale(1.03); /* Efeito de levantar */
-      box-shadow: var(--box-shadow-neon);
-    }
-    .btn-secondary:hover {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-        color: var(--bg-dark);
-    }
-
-
-    /* Estilo geral para seções */
-    .section {
-        padding: 80px 20px;
-        margin: 40px 20px;
-        border-radius: var(--border-radius);
-        text-align: center;
-        box-shadow: var(--box-shadow-subtle);
-    }
-    .section-title {
-        font-family: 'Poppins', sans-serif;
-        font-size: clamp(2.2rem, 5vw, 3rem); /* Responsivo */
-        margin-bottom: 50px; /* Aumentado */
-        color: var(--text-light);
-        text-shadow: 0 0 8px var(--primary-color);
-        font-weight: 700;
-    }
-    .section-subtitle {
-        font-size: 1.1rem;
-        color: var(--text-medium);
-        max-width: 700px;
-        margin: -30px auto 40px auto;
-        line-height: 1.8;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
     }
 
     /* Banner com a imagem bannerlogo.png */
     .banner-section {
+      position: relative;
       text-align: center;
-      margin: 60px 20px; /* Aumentado espaçamento */
-      padding: 20px;
-      background: var(--bg-medium);
-      border-radius: var(--border-radius);
+      margin: 40px 20px;
     }
     .banner-section img {
-      width: 100%;
-      max-width: 900px; /* Limite máximo */
-      max-height: 450px;
-      object-fit: contain; /* Para não cortar a logo */
+      width: 80%;
+      max-height: 400px;
+      object-fit: cover;
       border-radius: var(--border-radius);
       display: block;
       margin: 0 auto;
     }
 
+    /* Timeline: Por que ter um site? */
+    .why-website-timeline {
+      padding: 80px 20px;
+      text-align: center;
+      background: var(--bg-darker);
+      border-radius: var(--border-radius);
+      margin: 40px 20px;
+    }
+    .why-website-timeline h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 0;
+      max-width: 600px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #FFA500;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+    }
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 4px solid #FFA500;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-item:nth-child(odd)::before {
+      right: -10px;
+    }
+    .timeline-item:nth-child(even)::before {
+      left: -10px;
+    }
 
-    /* Sobre Mim */
-    .about { background: var(--bg-light); }
-    .about img.profile-pic {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid var(--primary-color);
-        box-shadow: var(--box-shadow-neon);
-        margin-bottom: 30px;
+    /* Main Content */
+    main { padding-top: 80px; }
+
+    /* Seção: Sobre Mim */
+    .about {
+      padding: 80px 20px;
+      text-align: center;
+      background: var(--bg-darker);
+      border-radius: var(--border-radius);
+      margin: 40px 20px;
+    }
+    .about h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
     }
     .about p {
-      font-size: 1.2rem; /* Aumentado */
+      font-size: 1.1rem;
       max-width: 800px;
-      margin: 0 auto 30px;
+      margin: 0 auto 20px;
       color: var(--text-light);
-      line-height: 1.8;
     }
-    .about .highlight {
-        color: var(--primary-color);
-        font-weight: 600;
+    .about .cta-section {
+      margin-top: 20px;
     }
-    .about .cta-section { margin-top: 30px; }
     .about .cta-section button {
       background: var(--primary-color);
       color: var(--bg-dark);
-      padding: 14px 28px;
+      padding: 12px 24px;
       border: none;
       border-radius: var(--border-radius);
       cursor: pointer;
-      font-weight: bold;
-      font-size: 1rem;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
     .about .cta-section button:hover {
       transform: scale(1.05);
-      box-shadow: var(--box-shadow-neon);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
     }
 
-    /* Experiência & Serviços (estilo de card unificado) */
-    .experience, .services { background: var(--bg-medium); }
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mais flexível */
-      gap: 30px; /* Aumentado */
-      justify-content: center;
-    }
-    .icon-card {
-      background: var(--bg-light);
-      border: 1px solid rgba(255, 115, 0, 0.2); /* Borda mais sutil */
-      padding: 30px 25px; /* Aumentado */
+    /* Seção: Experiência */
+    .experience {
+      padding: 80px 20px;
+      background: var(--bg-darker);
+      text-align: center;
+      margin: 40px 20px;
       border-radius: var(--border-radius);
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
-      text-align: left; /* Melhor para texto mais longo */
     }
-    .icon-card:hover {
-      transform: translateY(-8px); /* Efeito de levantar maior */
-      box-shadow: 0 10px 25px rgba(255, 115, 0, 0.2);
-      border-color: var(--primary-color);
-    }
-    .icon-card i {
-      font-size: 2.5rem; /* Aumentado */
-      color: var(--primary-color);
-      margin-bottom: 20px; /* Aumentado */
-      display: block; /* Para ocupar a linha */
-      text-align: center; /* Centralizar ícone */
-    }
-    .icon-card h3 {
+    .experience h2 {
       font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem; /* Aumentado */
-      margin-bottom: 15px;
-      color: var(--text-light);
-      text-align: center; /* Centralizar título */
-    }
-    .icon-card p,
-    .icon-card small {
-      font-size: 0.95rem;
-      color: var(--text-medium);
-      line-height: 1.6;
-    }
-    .section .cta-section { margin-top: 40px; }
-    .section .cta-section button {
-      background: var(--primary-color);
-      color: var(--bg-dark);
-      padding: 14px 28px;
-      border: none;
-      border-radius: var(--border-radius);
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    }
-    .section .cta-section button:hover {
-      transform: scale(1.05);
-      box-shadow: var(--box-shadow-neon);
-    }
-
-    /* Projetos & Open Source */
-    .projects, .open-source-projects { background: var(--bg-light); }
-    .project-filters {
+      font-size: 2.8rem;
       margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .experience-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
-    .project-filters input, .project-filters select {
-      padding: 12px 15px; /* Aumentado */
+    .experience-card {
+      background: var(--bg-dark);
       border: 1px solid var(--primary-color);
-      background: var(--bg-medium);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 260px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
+    }
+    .experience-card i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .experience-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--text-light);
+    }
+    .experience-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    /* Seção: Serviços */
+    .services {
+      padding: 80px 20px;
+      background: var(--bg-dark);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .services h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--bg-darker);
+      border: 1px solid var(--primary-color);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 260px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
+    }
+    .service-card i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .service-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--text-light);
+    }
+    .service-card p,
+    .service-card small {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    .services .cta-section {
+      margin-top: 30px;
+    }
+    .services .cta-section button {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .services .cta-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+
+    /* Seção: Projetos */
+    .projects {
+      padding: 80px 20px;
+      background: var(--bg-darker);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .projects h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .project-filters {
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .project-filters input, .project-filters select {
+      padding: 10px;
+      border: 1px solid var(--primary-color);
+      background: var(--bg-dark);
       color: var(--text-light);
       border-radius: var(--border-radius);
       outline: none;
-      font-size: 0.95rem;
     }
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajustado */
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
     .project {
-      background: var(--bg-medium);
-      border: 1px solid rgba(255, 115, 0, 0.2);
+      background: var(--bg-dark);
+      border: 1px solid var(--primary-color);
       border-radius: var(--border-radius);
-      padding: 0; /* Removido padding, imagem cobre */
+      padding: 15px;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       cursor: pointer;
       position: relative;
-      overflow: hidden; /* Para a imagem não vazar */
-      display: flex; /* Para alinhar conteúdo */
-      flex-direction: column; /* Conteúdo em coluna */
     }
     .project:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(255, 115, 0, 0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
     }
-    .project img.project-thumbnail { /* Nova classe para thumbnail */
+    .project img {
       width: 100%;
-      height: 200px; /* Altura fixa para thumbnails */
-      object-fit: cover; /* Garante que a imagem cubra bem */
-      border-bottom: 1px solid rgba(255, 115, 0, 0.2);
-      transition: transform 0.4s ease;
-    }
-    .project:hover img.project-thumbnail {
-        transform: scale(1.05); /* Zoom na imagem no hover */
-    }
-    .project-content {
-        padding: 20px; /* Espaçamento interno */
-        flex-grow: 1; /* Ocupa espaço restante */
-        display: flex;
-        flex-direction: column;
+      border-radius: var(--border-radius);
+      margin-bottom: 10px;
     }
     .project h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: 1.3rem; /* Aumentado */
+      font-size: 1.2rem;
       color: var(--text-light);
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
-    .project p.project-summary { /* Nova classe para sumário */
+    .project p {
       font-size: 0.9rem;
-      color: var(--text-medium);
-      margin-bottom: 15px;
-      flex-grow: 1; /* Empurra botão para baixo */
+      color: var(--text-light);
     }
     .btn-vermais {
-      margin-top: auto; /* Empurra para o final do card */
-      padding: 10px 20px; /* Ajustado */
+      margin-top: 10px;
+      padding: 8px 16px;
       border: none;
       background: var(--primary-color);
       color: var(--bg-dark);
       border-radius: var(--border-radius);
       cursor: pointer;
-      font-weight: 600;
-      transition: transform var(--transition-speed), background-color var(--transition-speed);
-      width: 100%; /* Ocupa largura total */
+      transition: transform var(--transition-speed);
     }
     .btn-vermais:hover {
-      transform: scale(1.02);
-      background-color: var(--primary-hover-color);
+      transform: scale(1.05);
     }
-    .project-details { display: none; } /* Mantido para JS */
+    .project-details {
+      display: none;
+    }
+    .projects .cta-section {
+      margin-top: 30px;
+    }
+    .projects .cta-section button {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .projects .cta-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
 
     /* Modal para detalhes do projeto */
     .modal {
@@ -513,379 +570,390 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background: rgba(0,0,0,0.85); /* Mais escuro */
-      backdrop-filter: blur(5px);
+      background: rgba(0,0,0,0.8);
       align-items: center;
       justify-content: center;
-      padding: 20px;
     }
     .modal-content {
-      background: var(--bg-light);
-      padding: 30px; /* Aumentado */
+      background: var(--bg-darker);
+      padding: 20px;
       border-radius: var(--border-radius);
-      max-width: 850px; /* Aumentado */
-      width: 95%;
+      max-width: 800px;
+      width: 90%;
       color: var(--text-light);
       position: relative;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      max-height: 90vh; /* Altura máxima */
-      overflow-y: auto; /* Scroll se necessário */
     }
     .modal-close {
       position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 2rem; /* Aumentado */
-      font-weight: bold;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
       cursor: pointer;
       color: var(--primary-color);
-      transition: transform 0.2s;
+      z-index: 9999;
     }
-    .modal-close:hover { transform: scale(1.2); }
-
     .carousel {
       position: relative;
       width: 100%;
-      max-height: 450px; /* Altura máxima aumentada */
+      height: 400px;
       overflow: hidden;
-      margin-bottom: 25px;
-      border-radius: var(--border-radius);
+      margin-bottom: 20px;
     }
     .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      max-height: 450px;
-      object-fit: cover; /* Ou contain, dependendo das imagens */
+      object-fit: cover;
       border-radius: var(--border-radius);
       transition: opacity 0.5s ease;
       opacity: 0;
-      position: absolute; /* Adicionado */
-      top:0; left:0; /* Adicionado */
     }
-    .carousel img.active { opacity: 1; position: relative; /* Para ocupar espaço */ }
+    .carousel img.active {
+      opacity: 1;
+    }
     .carousel-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: var(--primary-color);
       cursor: pointer;
       z-index: 1;
-      background: rgba(10, 10, 10, 0.6);
-      padding: 10px 12px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
       border-radius: 50%;
       transition: background var(--transition-speed);
     }
-    .carousel-arrow:hover { background: rgba(10, 10, 10, 0.9); }
-    .carousel-arrow.left { left: 15px; }
-    .carousel-arrow.right { right: 15px; }
-
-    .modal-body h3 { /* Título do projeto no modal */
+    .carousel-arrow:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .carousel-arrow.left {
+      left: 10px;
+    }
+    .carousel-arrow.right {
+      right: 10px;
+    }
+    .modal-body h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: 2rem; /* Aumentado */
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .modal-body p {
+      font-size: 1.1rem;
       margin-bottom: 15px;
-      color: var(--primary-color);
-    }
-    .modal-body p { /* Descrição do projeto no modal */
-      font-size: 1.05rem; /* Aumentado */
-      margin-bottom: 15px;
-      line-height: 1.7;
-      color: var(--text-medium);
-    }
-    .modal-body ul {
-        list-style: disc;
-        margin-left: 20px;
-        margin-bottom: 15px;
-    }
-    .modal-body li {
-        margin-bottom: 8px;
-        color: var(--text-medium);
     }
     .modal-body .btn-like {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: 1px solid var(--primary-color);
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
       background: transparent;
       color: var(--primary-color);
       font-size: 1rem;
       cursor: pointer;
-      border-radius: var(--border-radius);
-      transition: transform var(--transition-speed), background-color var(--transition-speed), color var(--transition-speed);
+      transition: transform var(--transition-speed);
     }
-    .modal-body .btn-like:hover, .modal-body .btn-like.liked {
+    .modal-body .btn-like:hover {
       transform: scale(1.05);
-      background-color: var(--primary-color);
-      color: var(--bg-dark);
     }
-    .modal-body .btn-like i { margin-right: 8px; }
 
-
-    /* Depoimentos */
-    .testimonials { background: var(--bg-medium); }
+    /* Seção: Depoimentos */
+    .testimonials {
+      padding: 80px 20px;
+      background: var(--bg-dark);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .testimonials h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
     .testimonial-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
     .testimonial-card {
-      background: var(--bg-light);
-      border: 1px solid rgba(255, 115, 0, 0.2);
-      padding: 30px;
+      background: var(--bg-darker);
+      border: 1px solid var(--primary-color);
+      padding: 20px;
       border-radius: var(--border-radius);
+      width: 320px;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       font-style: italic;
-      position: relative; /* Para o quote */
-      padding-top: 50px; /* Espaço para o quote */
-    }
-    .testimonial-card:before { /* Ícone de citação */
-        content: "\f10d";
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
-        font-size: 2.5rem;
-        color: var(--primary-color);
-        position: absolute;
-        top: 15px;
-        left: 25px;
-        opacity: 0.5;
     }
     .testimonial-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(255, 115, 0, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
     }
     .testimonial-card p {
-      font-size: 1.05rem;
-      color: var(--text-medium);
-      margin-bottom: 20px;
+      font-size: 1rem;
+      color: var(--text-light);
     }
     .testimonial-card span {
       display: block;
-      margin-top: 15px;
-      font-weight: 600;
+      margin-top: 10px;
+      font-weight: bold;
       color: var(--text-light);
-      font-style: normal;
     }
 
-    /* Blog */
-    .blog { background: var(--bg-light); }
-    .blog-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .blog-card { /* Reutilizando .icon-card */
-      background: var(--bg-medium);
-      border: 1px solid rgba(255, 115, 0, 0.2);
-      padding: 25px;
+    /* Seção: Blog */
+    .blog {
+      padding: 80px 20px;
+      background: var(--bg-darker);
+      text-align: center;
+      margin: 40px 20px;
       border-radius: var(--border-radius);
+    }
+    .blog h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+    .blog-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .blog-card {
+      background: var(--bg-dark);
+      border: 1px solid var(--primary-color);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 300px;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
     .blog-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(255, 115, 0, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color);
     }
     .blog-card h3 {
       font-family: 'Poppins', sans-serif;
       font-size: 1.4rem;
-      color: var(--primary-color);
+      color: var(--text-light);
       margin-bottom: 10px;
     }
     .blog-card .meta {
-      font-size: 0.85rem;
-      margin-bottom: 15px;
-      color: var(--text-medium);
-      font-style: italic;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      color: var(--primary-color);
     }
     .blog-card p {
       font-size: 0.95rem;
-      color: var(--text-medium);
-      line-height: 1.6;
+      color: var(--text-light);
+    }
+    .blog .cta-section {
+      margin-top: 30px;
+    }
+    .blog .cta-section button {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .blog .cta-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
     }
 
-    /* FAQ */
-    .faq { background: var(--bg-medium); }
+    /* Seção: FAQ */
+    .faq {
+      padding: 80px 20px;
+      background: var(--bg-dark);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .faq h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
     .faq-item {
       max-width: 800px;
-      margin: 0 auto 15px;
+      margin: 0 auto 20px;
       text-align: left;
-      background-color: var(--bg-light);
-      border-radius: var(--border-radius);
-      overflow: hidden; /* Para transição de max-height */
-      border: 1px solid rgba(255, 115, 0, 0.1);
-    }
-    .faq-question { /* Div para a pergunta clicável */
-      padding: 20px;
+      border-bottom: 1px solid var(--primary-color);
+      padding: 10px 0;
       cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color var(--transition-speed);
+      transition: background var(--transition-speed), max-height 0.3s ease;
+      border-radius: var(--border-radius);
+      overflow: hidden;
     }
-    .faq-question:hover { background-color: rgba(255,115,0,0.1); }
+    .faq-item:hover { background: var(--bg-darker); }
     .faq-item h3 {
       font-family: 'Poppins', sans-serif;
       font-size: 1.2rem;
       color: var(--text-light);
-      margin-bottom: 0; /* Removido, já que está no .faq-question */
+      margin-bottom: 5px;
     }
-    .faq-question i { /* Ícone de seta */
-        transition: transform 0.3s ease;
-        color: var(--primary-color);
-    }
-    .faq-item.active .faq-question i {
-        transform: rotate(180deg);
-    }
-    .faq-item p { /* Resposta */
-      font-size: 1rem;
-      color: var(--text-medium);
+    .faq-item p {
+      font-size: 0.95rem;
+      color: var(--text-light);
       max-height: 0;
       opacity: 0;
-      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-      padding: 0 20px;
-      line-height: 1.7;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
     }
     .faq-item.active p {
-      max-height: 300px; /* Aumentado para respostas mais longas */
+      max-height: 200px;
       opacity: 1;
-      padding: 0 20px 20px 20px;
+    }
+    .faq .cta-section {
+      margin-top: 30px;
+    }
+    .faq .cta-section button {
+      background: var(--primary-color);
+      color: var(--bg-dark);
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .faq .cta-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
     }
 
-
-    /* Contato */
-    .contact { background: var(--bg-light); }
+    /* Seção: Contato */
+    .contact {
+      padding: 80px 20px;
+      background: var(--bg-darker);
+      text-align: center;
+      margin: 40px 20px;
+      border-radius: var(--border-radius);
+    }
+    .contact h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
     .contact form {
-      max-width: 600px; /* Aumentado */
+      max-width: 500px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 20px; /* Aumentado */
+      gap: 15px;
     }
     .contact form input,
     .contact form textarea {
-      padding: 15px; /* Aumentado */
-      border: 1px solid rgba(255, 115, 0, 0.3);
+      padding: 12px;
+      border: 1px solid var(--primary-color);
       border-radius: var(--border-radius);
-      background: var(--bg-medium);
+      background: var(--bg-dark);
       color: var(--text-light);
       font-size: 1rem;
       outline: none;
-      transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
-    }
-    .contact form input::placeholder,
-    .contact form textarea::placeholder {
-        color: var(--text-medium);
-        opacity: 0.7;
+      transition: border var(--transition-speed), box-shadow var(--transition-speed);
     }
     .contact form input:focus,
     .contact form textarea:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(255, 115, 0, 0.3);
+      border: 1px solid var(--primary-color);
+      box-shadow: 0 0 8px var(--primary-color);
     }
     .contact form button {
-      padding: 16px; /* Aumentado */
+      padding: 14px;
       background: var(--primary-color);
       color: var(--bg-dark);
       border: none;
       border-radius: var(--border-radius);
       cursor: pointer;
       font-weight: bold;
-      font-size: 1.1rem;
-      text-transform: uppercase;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
     .contact form button:hover {
-      transform: scale(1.03);
-      box-shadow: var(--box-shadow-neon);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
     }
 
     /* Footer */
     footer {
-      background: var(--bg-medium);
-      color: var(--text-medium);
-      padding: 50px 20px;
+      background: var(--bg-darker);
+      color: var(--text-light);
+      padding: 40px 20px;
       text-align: center;
-      border-radius: var(--border-radius) var(--border-radius) 0 0; /* Arredondar topo */
-      margin: 0 20px; /* Remover margem de baixo */
+      border-radius: var(--border-radius);
+      margin: 40px 20px;
     }
-    footer p { margin-bottom: 15px; font-size: 0.95rem; }
-    footer a { color: var(--primary-color); font-weight: 500; }
-    footer a:hover { text-decoration: underline; }
-    .footer-social-icons {
-        margin-top: 20px;
-    }
-    .footer-social-icons a {
-        color: var(--text-medium);
-        font-size: 1.5rem;
-        margin: 0 10px;
-        transition: color var(--transition-speed), transform var(--transition-speed);
-    }
-    .footer-social-icons a:hover {
-        color: var(--primary-color);
-        transform: scale(1.2);
-    }
-
+    footer p { margin-bottom: 10px; }
+    footer a { color: var(--primary-color); }
 
     /* Animações */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     @keyframes neonFadeIn {
-      from { opacity: 0; filter: drop-shadow(0 0 2px var(--primary-color)); transform: translateY(20px); }
-      to { opacity: 1; filter: drop-shadow(0 0 12px var(--primary-color)); transform: translateY(0); }
+      from { opacity: 0; filter: drop-shadow(0 0 2px var(--primary-color)); }
+      to { opacity: 1; filter: drop-shadow(0 0 12px var(--primary-color)); }
     }
-    .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .animate-on-scroll.in-view {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
 
     /* Media Queries para Responsividade */
     @media (max-width: 768px) {
-      .section {
-        padding: 60px 15px;
-        margin: 30px 10px;
-      }
-      .section-title { font-size: 2rem; margin-bottom: 30px; }
-      .section-subtitle { font-size: 1rem; margin: -20px auto 30px auto; }
-
       header {
-        padding: 15px;
-        /* flex-direction: column;
-        align-items: flex-start; */
+        flex-direction: column;
+        align-items: flex-start;
       }
-
-      .hero { min-height: 80vh; padding: 30px 15px;}
-      .hero h1 { font-size: 2.2rem; }
-      .hero p { font-size: 1.1rem; }
-      .cta-buttons { flex-direction: column; gap: 15px; }
-      .cta-buttons button { width: 100%; }
-
-
-      .cards-container,
-      .project-grid,
+      .btn-orcamento {
+        margin-top: 10px;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .service-cards,
+      .experience-cards,
       .testimonial-cards,
       .blog-cards {
-        grid-template-columns: 1fr; /* Coluna única */
-        gap: 20px;
+        flex-direction: column;
+        align-items: center;
       }
-      .icon-card, .project, .testimonial-card, .blog-card {
-        width: 100%; /* Ocupa toda largura */
+      .service-card,
+      .experience-card,
+      .testimonial-card,
+      .blog-card {
+        width: 90%;
       }
-      .contact form { width: 100%; }
-      .modal-content { width: 95%; padding: 20px; max-height: 85vh;}
-      .carousel { max-height: 300px; }
-      .modal-body h3 { font-size: 1.6rem; }
-      .modal-body p { font-size: 0.95rem; }
-
-      footer { margin: 0 10px; padding: 40px 15px; }
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact form {
+        width: 90%;
+      }
+      .modal-content {
+        width: 95%;
+        padding: 10px;
+      }
+      .carousel {
+        height: 300px;
+      }
     }
+  </style>
 
-    /* Estilos do Carrossel de Projetos (horizontal) - Se for usado */
+  <!-- ======== INÍCIO - Estilos do Carrossel de Projetos ======== -->
+  <style>
     .projetos-carrossel {
       position: relative;
       overflow: hidden;
@@ -896,50 +964,37 @@
       transition: transform 0.5s ease-in-out;
     }
     .projetos-carrossel .slide-projeto {
-      min-width: 100%; /* Cada slide ocupa 100% da largura do container */
-      display: grid; /* Usar grid para mostrar múltiplos cards por slide */
-      grid-template-columns: repeat(var(--projects-per-slide, 3), 1fr); /* Default 3, ajustável por JS */
-      gap: 20px; /* Espaçamento entre os projetos no slide */
-      padding: 0 10px; /* Pequeno padding para não colar nas bordas */
+      min-width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
     }
-    .projetos-carrossel .slide-projeto .project {
-        /* Estilos do .project já definidos acima */
-    }
+    /* Botões de navegação do carrossel */
     .carousel-nav {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(10, 10, 10, 0.7);
+      background: rgba(0, 0, 0, 0.5);
       color: var(--primary-color);
       border: none;
       padding: 10px 15px;
       cursor: pointer;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       border-radius: 50%;
-      transition: background 0.3s, transform 0.3s;
+      transition: background 0.3s;
       z-index: 2;
     }
     .carousel-nav:hover {
-      background: rgba(0, 0, 0, 0.9);
-      transform: translateY(-50%) scale(1.1);
+      background: rgba(0, 0, 0, 0.8);
     }
-    .carousel-nav.prev { left: -15px; } /* Ajustar para fora ou dentro */
-    .carousel-nav.next { right: -15px; }
-
-    @media (max-width: 992px) {
-      .projetos-carrossel .slide-projeto {
-        --projects-per-slide: 2;
-      }
+    .carousel-nav.prev {
+      left: 10px;
     }
-    @media (max-width: 600px) {
-      .projetos-carrossel .slide-projeto {
-        --projects-per-slide: 1;
-      }
-       .carousel-nav.prev { left: 5px; }
-       .carousel-nav.next { right: 5px; }
+    .carousel-nav.next {
+      right: 10px;
     }
-
   </style>
+  <!-- ======== FIM - Estilos do Carrossel de Projetos ======== -->
 
 </head>
 <body>
@@ -947,24 +1002,21 @@
   <div id="loading-bar"></div>
 
   <!-- Back to Top Button -->
-  <div id="back-to-top" aria-label="Voltar ao Topo" onclick="scrollToTopSmooth()">
+  <div id="back-to-top" aria-label="Voltar ao Topo" onclick="scrollToSection('hero')">
     <i class="fas fa-arrow-up"></i>
   </div>
 
   <!-- Header -->
   <header role="banner">
-    <div class="logo">ViewLab<span class="tech">.tech</span></div>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu" aria-expanded="false">
-        <i class="fas fa-bars"></i>
-    </button>
-    <nav role="navigation" aria-label="Menu Principal" id="nav-menu">
+    <div class="logo animate-on-scroll">ViewLab<span class="tech">.tech</span></div>
+    <div class="menu-toggle" id="menu-toggle"></div>
+    <nav role="navigation" aria-label="Menu Principal" class="animate-on-scroll" id="nav-menu">
       <ul>
         <li><a href="#hero">Home</a></li>
-        <li><a href="#about">Sobre Mim</a></li>
+        <li><a href="#about">Sobre</a></li>
         <li><a href="#experience">Experiência</a></li>
         <li><a href="#services">Serviços</a></li>
         <li><a href="#projects">Projetos</a></li>
-        <li><a href="#open-source">Open Source</a></li>
         <li><a href="#testimonials">Depoimentos</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -975,538 +1027,285 @@
   </header>
 
     <!-- Seção Hero -->
-    <section class="hero" id="hero" aria-label="Seção Principal">
-      <!-- <video autoplay muted loop playsinline>
-        <source src="static/coding_background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video> -->
+    <section class="hero animate-on-scroll" id="hero" aria-label="Seção Principal">
       <div class="content">
-        <h1>Transformando Ideias em Realidade Digital</h1>
-        <p>Sou Miguel Penha Reis, desenvolvedor de 15 anos. Crio sites, landing pages e soluções com IA que atraem, engajam e convertem, utilizando tecnologia de ponta.</p>
+        <h1>Crie Experiências Digitais que Convertem</h1>
+        <p>Desenvolva sites, landing pages e soluções com IA que atraem, engajam e convertem com tecnologia de ponta.</p>
         <div class="cta-buttons">
-          <button class="btn-primary" onclick="scrollToSection('contact')">Vamos Conversar</button>
-          <button class="btn-secondary" onclick="scrollToSection('projects')">Meus Projetos</button>
+          <button class="btn-primary" onclick="scrollToSection('contact')">Comece Agora</button>
+          <button class="btn-secondary" onclick="scrollToSection('projects')">Ver Projetos</button>
         </div>
       </div>
     </section>
 
     <!-- Sobre Mim -->
-    <section class="about section animate-on-scroll" id="about" aria-labelledby="about-title">
-      <h2 class="section-title" id="about-title">Sobre Mim</h2>
-      <img src="static/profile_miguel.jpg" alt="Miguel Penha Reis" class="profile-pic">
-      <p>Olá! Meu nome é <span class="highlight">Miguel Penha Reis</span>, e aos <span class="highlight">15 anos</span>, sou um desenvolvedor e criador apaixonado por tecnologia. Desde cedo, mergulhei no universo da programação, focado em transformar ideias complexas em <span class="highlight">experiências digitais únicas e impactantes</span>. Com ViewLab.tech, meu objetivo é ajudar marcas e projetos a se destacarem no mundo digital através de soluções inovadoras, web design moderno e a inteligência artificial.</p>
-      <p>Acredito que a tecnologia tem o poder de resolver problemas e criar oportunidades incríveis. Estou sempre explorando novas ferramentas e aprendendo para entregar o melhor em cada projeto. Vamos construir algo incrível juntos?</p>
+    <section class="about animate-on-scroll" id="about" aria-label="Sobre Mim">
+      <h2>Sobre Mim</h2>
+      <p>Olá! Meu nome é Miguel e sou um desenvolvedor apaixonado por transformar ideias em experiências digitais únicas e impactantes. Ajudo marcas a se destacarem com soluções inovadoras.</p>
       <div class="cta-section">
-        <button onclick="scrollToSection('contact')">Conheça Mais & Inicie um Projeto</button>
+        <button onclick="scrollToSection('contact')">Conheça Mais</button>
       </div>
     </section>
 
     <!-- Experiência -->
-    <section class="experience section animate-on-scroll" id="experience" aria-labelledby="experience-title">
-      <h2 class="section-title" id="experience-title">Minhas Habilidades</h2>
-      <div class="cards-container">
-        <article class="icon-card">
+    <section class="experience animate-on-scroll" id="experience" aria-label="Experiência">
+      <h2>Experiência</h2>
+      <div class="experience-cards">
+        <article class="experience-card">
           <i class="fas fa-code"></i>
-          <h3>C# & .NET</h3>
-          <p>Desenvolvimento de aplicações desktop robustas e web services eficientes utilizando o ecossistema C# e .NET.</p>
+          <h3>C#</h3>
+          <p>Desenvolvimento de aplicações desktop e web utilizando C# e .NET.</p>
         </article>
-        <article class="icon-card">
+        <article class="experience-card">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS</h3>
+          <p>Criação de estilos responsivos e modernos para interfaces web.</p>
+        </article>
+        <article class="experience-card">
+          <i class="fab fa-html5"></i>
+          <h3>HTML</h3>
+          <p>Estruturação semântica e acessível de páginas web.</p>
+        </article>
+        <article class="experience-card">
           <i class="fab fa-python"></i>
           <h3>Python</h3>
-          <p>Automação de tarefas, análise de dados, desenvolvimento de scripts e back-end para aplicações IA.</p>
+          <p>Automação, análise de dados e desenvolvimento de scripts.</p>
         </article>
-        <article class="icon-card">
+        <article class="experience-card">
           <i class="fab fa-js"></i>
           <h3>JavaScript</h3>
-          <p>Criação de interações dinâmicas, funcionalidades front-end complexas e desenvolvimento full-stack com Node.js.</p>
-        </article>
-        <article class="icon-card">
-          <i class="fab fa-html5"></i>
-          <h3>HTML5</h3>
-          <p>Estruturação semântica e acessível de páginas web, formando a base para interfaces ricas e modernas.</p>
-        </article>
-        <article class="icon-card">
-          <i class="fab fa-css3-alt"></i>
-          <h3>CSS3 & Frameworks</h3>
-          <p>Design de estilos responsivos, animações e interfaces visualmente atraentes, utilizando CSS puro e frameworks como TailwindCSS.</p>
-        </article>
-         <article class="icon-card">
-          <i class="fas fa-brain"></i>
-          <h3>Inteligência Artificial</h3>
-          <p>Desenvolvimento e integração de soluções com IA (especialmente LLMs como Gemini) para personalização, automação e insights.</p>
+          <p>Desenvolvimento de interações dinâmicas e funcionalidades front-end.</p>
         </article>
       </div>
     </section>
 
     <!-- Serviços -->
-    <section class="services section animate-on-scroll" id="services" aria-labelledby="services-title">
-      <h2 class="section-title" id="services-title">O Que Ofereço</h2>
-      <p class="section-subtitle">Soluções digitais personalizadas para impulsionar seu projeto ou negócio, com foco em inovação e resultados.</p>
-      <div class="cards-container">
-        <article class="icon-card animate-on-scroll">
-          <i class="fas fa-laptop-code"></i>
-          <h3>Desenvolvimento Web Completo</h3>
-          <p>Criação de sites institucionais, e-commerce, blogs e plataformas web sob medida, desde o conceito até o lançamento.</p>
-        </article>
-        <article class="icon-card animate-on-scroll">
-          <i class="fas fa-file-alt"></i>
-          <h3>Landing Pages de Alta Conversão</h3>
-          <p>Design e desenvolvimento de landing pages otimizadas para transformar visitantes em clientes, focadas em seus objetivos de marketing.</p>
-        </article>
-        <article class="icon-card animate-on-scroll">
-          <i class="fas fa-robot"></i>
-          <h3>Soluções com Inteligência Artificial</h3>
-          <p>Integração de IA para automação de processos, análise de dados, personalização de experiências e criação de ferramentas inteligentes.</p>
-        </article>
-        <article class="icon-card animate-on-scroll">
+    <section class="services animate-on-scroll" id="services" aria-label="Serviços">
+      <h2>O Que Oferecemos</h2>
+      <div class="service-cards">
+        <article class="service-card animate-on-scroll">
           <i class="fas fa-mobile-alt"></i>
-          <h3>Design Responsivo e Moderno</h3>
-          <p>Interfaces que se adaptam perfeitamente a qualquer dispositivo (desktop, tablet, mobile), garantindo a melhor experiência do usuário.</p>
+          <h3>Design Responsivo</h3>
+          <p>Interfaces que se adaptam a qualquer dispositivo, proporcionando a melhor experiência para seus usuários.</p>
         </article>
-        <article class="icon-card animate-on-scroll">
-          <i class="fas fa-search-dollar"></i>
-          <h3>SEO & Performance Otimizada</h3>
-          <p>Otimização técnica e de conteúdo para melhor posicionamento nos buscadores e carregamento rápido das páginas.</p>
+        <article class="service-card animate-on-scroll">
+          <i class="fas fa-search"></i>
+          <h3>SEO & Performance</h3>
+          <p>Otimização técnica e de conteúdo para posicionar sua marca no topo dos buscadores.</p>
         </article>
-        <article class="icon-card animate-on-scroll">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Segurança e Manutenção</h3>
-          <p>Implementação de boas práticas de segurança e planos de manutenção para garantir a integridade e o bom funcionamento do seu projeto.</p>
+        <article class="service-card animate-on-scroll">
+          <i class="fas fa-robot"></i>
+          <h3>Soluções com IA</h3>
+          <p>Integração de inteligência artificial para automação, análise de dados e personalização.</p>
+        </article>
+        <article class="service-card animate-on-scroll">
+          <i class="fas fa-chart-line"></i>
+          <h3>Conversão Otimizada</h3>
+          <p>Landing pages criadas para transformar visitantes em clientes reais, impulsionando seu faturamento.</p>
         </article>
       </div>
       <div class="cta-section">
-        <button onclick="scrollToSection('contact')">Solicite um Orçamento Personalizado</button>
+        <button onclick="scrollToSection('contact')">Solicite um Orçamento</button>
       </div>
     </section>
 
     <!-- Banner com a imagem bannerlogo.png -->
     <section class="banner-section animate-on-scroll" id="banner">
-      <img src="static/bannerlogo.png" alt="Banner Promocional ViewLab.tech">
+      <img src="static/bannerlogo.png" alt="Banner Logo">
     </section>
 
     <!-- Projetos -->
-    <section class="projects section animate-on-scroll" id="projects" aria-labelledby="projects-title">
-      <h2 class="section-title" id="projects-title">Projetos & Soluções</h2>
-      <p class="section-subtitle">Conheça alguns dos projetos que desenvolvi, demonstrando a aplicação prática de criatividade e tecnologia.</p>
+    <section class="projects animate-on-scroll" id="projects" aria-label="Projetos e Soluções">
+      <h2>Projetos & Soluções</h2>
       <div class="project-filters">
         <input type="text" id="project-search" placeholder="Pesquisar projetos..." aria-label="Pesquisar Projetos">
         <select id="category-filter" aria-label="Filtrar por Categoria">
-          <option value="all">Todas Categorias</option>
-          <option value="IA">Soluções IA</option>
+          <option value="all">Todos</option>
           <option value="landing">Landing Pages</option>
-          <option value="platform">Plataformas Web</option>
-          <option value="app">Aplicações</option>
-          <option value="education">Educação</option>
-          <option value="health">Saúde & Bem-estar</option>
-          <option value="business">Negócios</option>
+          <option value="IA">IA</option>
         </select>
       </div>
-      <div class="project-grid" id="project-grid-main">
-        <!-- Projeto Lunar -->
-        <article class="project animate-on-scroll" data-title="Projeto Lunar - IA Educacional" data-category="IA,education,platform">
-          <img src="static/lunar_cover.png" alt="Projeto Lunar" class="project-thumbnail"> <!-- VOCÊ PRECISA CRIAR ESSA IMAGEM -->
-          <div class="project-content">
-            <h3>Projeto Lunar</h3>
-            <p class="project-summary">IA para aprendizado estudantil que orienta alunos a encontrarem soluções, promovendo aprendizado ativo com recursos personalizados.</p>
-            <button class="btn-vermais" onclick="openProjectModal(this, ['static/lunar_detail1.png', 'static/lunar_detail2.png'])">Ver Mais</button> <!-- CRIE ESSAS IMAGENS -->
-            <div class="project-details">
-              <p>O Projeto Lunar é uma inteligência artificial desenvolvida para melhorar a experiência de aprendizado dos estudantes. Diferente das IAs tradicionais, ela não fornece respostas prontas, mas orienta os alunos a encontrarem as soluções por conta própria, promovendo um aprendizado ativo e contínuo.</p>
-              <h4>Funcionalidades Principais:</h4>
-              <ul>
-                <li><strong>Ensino Personalizado:</strong> Adapta materiais e prompts para cada aluno (idade, nível), com exemplos e linguagem apropriada.</li>
-                <li><strong>Modo de Voz para Crianças:</strong> Assistente interativo por voz para crianças não alfabetizadas.</li>
-                <li><strong>Gestão de Dúvidas:</strong> Registra e categoriza perguntas, gerando resumos e sugestões de aulas para professores.</li>
-                <li><strong>Revisões Customizadas:</strong> Professores geram revisões e gabaritos personalizados.</li>
-                <li><strong>Gráficos de Dificuldades:</strong> IA cria gráficos com as dúvidas mais frequentes por matéria.</li>
-                <li><strong>Avaliação de Professores (Desempenho):</strong> Geração de avaliações para medir desempenho docente e sugestões de melhoria.</li>
-                <li><strong>Quiz Sob Demanda:</strong> Quizzes estruturados conforme pedidos dos alunos, com resumo para reforço.</li>
-                <li><strong>Podcast Interativo:</strong> Geração de podcasts com duas vozes simulando discussões sobre temas.</li>
-                <li><strong>Mapa Mental Interativo:</strong> Criação de mapas mentais customizados com interface visual.</li>
-                <li><strong>Chat Geral (Multiplayer):</strong> Salas customizadas para interação entre alunos, com suporte da IA.</li>
-                <li><strong>Redação para ENEM:</strong> Módulo de treino para redação (foco ensino médio/usuários gerais).</li>
-                <li><strong>Flashcards Customizados:</strong> Alunos criam flashcards com auxílio da IA.</li>
-                <li><strong>Jogo da Memória Educacional:</strong> Jogo para associar tópicos e explicações.</li>
-                <li><strong>Complete a Frase:</strong> Exercício de fixação de conteúdo.</li>
-                <li><strong>Simulados Completos:</strong> Geração de simulados com gabaritos e folhas de respostas.</li>
-                <li><strong>Sistema de Segurança:</strong> Verificações para impedir acesso indevido entre perfis, Cloudflare, backups e moderação de conteúdo.</li>
-                <li><strong>Lunar Flow (Rede Social Educacional):</strong> Compartilhamento de resoluções, dúvidas, posts, vídeos curtos, seguir perfis, curtidas e comentários.</li>
-                <li><strong>Geração de Imagens com IA:</strong> Para trabalhos escolares ou posts no Lunar Flow.</li>
-                <li><strong>Geração de Slides para Professores:</strong> Auxílio na organização de aulas.</li>
-                <li><strong>Geração de Avaliações por Professores:</strong> Criação de avaliações customizadas com gabarito.</li>
-                <li><strong>Geração de Plano de Aula:</strong> Planos de aula completos gerados por IA.</li>
-                <li><strong>Jogo de Puzzle (Lumi):</strong> Jogo educativo com o mascote Lumi.</li>
-                <li><strong>Geração de "Folhinhas":</strong> Material explicativo com design atraente gerado por IA.</li>
-              </ul>
-            </div>
-          </article>
-
-        <!-- Projeto MindFLOW -->
-        <article class="project animate-on-scroll" data-title="MindFLOW - Gestão para Psicólogos" data-category="IA,health,platform,business">
-          <img src="static/mindflow_cover.png" alt="MindFLOW" class="project-thumbnail"> <!-- CRIE ESSA IMAGEM -->
-          <div class="project-content">
-            <h3>MindFLOW</h3>
-            <p class="project-summary">Plataforma com IA para psicólogos gerenciarem pacientes, agendamentos e obterem insights terapêuticos.</p>
-            <button class="btn-vermais" onclick="openProjectModal(this, ['static/mindflow_detail1.png'])">Ver Mais</button> <!-- CRIE ESSA IMAGEM -->
-            <div class="project-details">
-              <p>MindFLOW é um sistema inteligente para otimizar a rotina de psicólogos, facilitando a gestão de pacientes e o planejamento terapêutico.</p>
-              <h4>Funcionalidades Principais:</h4>
-              <ul>
-                <li><strong>Upload de Arquivos de Pacientes:</strong> Armazenamento centralizado e seguro de anotações, relatórios, etc.</li>
-                <li><strong>Classificação de Pacientes (Leve, Médio, Alto):</strong> Facilita planejamento e frequência de sessões (15 dias, semanal, 2x/semana ou encaminhamento).</li>
-                <li><strong>Agendamento e Organização de Horários:</strong> Sistema integrado para secretária/administrador organizar consultas.</li>
-                <li><strong>Geração de Resumo com IA:</strong> Resumo automático da situação do paciente baseado nas anotações do psicólogo.</li>
-                <li><strong>Sistema de Podcast com IA:</strong> Simula diálogo entre dois profissionais sobre o caso do paciente para insights.</li>
-                <li><strong>Geração de Mapas Mentais:</strong> Visualização gráfica da situação do paciente (sintomas, comportamentos, evolução).</li>
-              </ul>
-            </div>
-          </article>
-
-        <!-- Projeto Aurora Oportunidades -->
-        <article class="project animate-on-scroll" data-title="Aurora Oportunidades - IA para Empreendedores" data-category="IA,business,platform">
-          <img src="static/ia1.png" alt="Aurora Oportunidades" class="project-thumbnail"> <!-- Imagem existente -->
-          <div class="project-content">
-            <h3>Aurora Oportunidades</h3>
-            <p class="project-summary">Assistente com IA para empreendedores criarem planos de negócio, gerenciar finanças e automatizar marketing.</p>
-            <button class="btn-vermais" onclick="openProjectModal(this, ['static/ia1.png', 'static/ia2.png'])">Ver Mais</button> <!-- Imagens existentes -->
-            <div class="project-details">
-              <p>Aurora Oportunidades é uma plataforma inteligente que auxilia empreendedores no desenvolvimento e gestão de seus negócios.</p>
-              <h4>Funcionalidades Principais:</h4>
-              <ul>
-                <li><strong>Criação de Planos de Negócio:</strong>
-                  <ul>
-                    <li>Plano Simples: Seleção de produto, valor inicial, habilidades.</li>
-                    <li>Plano Completo: Detalhado com nome, descrição, habilidades, cursos, investimentos, etc.</li>
-                  </ul>
-                </li>
-                <li><strong>Cadastro de Produtos:</strong> Inserir informações e gerar descrições de vendas (cópias).</li>
-                <li><strong>Metas de Vendas:</strong> Definição e acompanhamento de objetivos.</li>
-                <li><strong>Estratégias:</strong> Visualização de estratégias de marketing e vendas.</li>
-                <li><strong>Finanças:</strong> Registro de receitas, despesas e análise de lucros.</li>
-                <li><strong>Calculadora Mágica:</strong> Cálculo de preço ideal baseado em custo e margem de lucro.</li>
-                <li><strong>Geração de Landing Pages:</strong> Ferramenta para criar páginas de vendas otimizadas.</li>
-                <li><strong>Sistema de Facebook Ads com IA:</strong> Automação de preenchimento e lançamento de campanhas.</li>
-              </ul>
-            </div>
-          </article>
-
-        <!-- Projeto Cooktura -->
-        <article class="project animate-on-scroll" data-title="Cooktura - Assistente Culinário IA" data-category="IA,app,health">
-          <img src="static/cooktura1.png" alt="Cooktura" class="project-thumbnail"> <!-- Imagem existente -->
-          <div class="project-content">
-            <h3>Cooktura</h3>
-            <p class="project-summary">App com IA para atingir objetivos nutricionais com planos alimentares, receitas dinâmicas e análise de refeições.</p>
-            <button class="btn-vermais" onclick="openProjectModal(this, ['static/cooktura1.png', 'static/cooktura2.png'])">Ver Mais</button> <!-- Imagens existentes -->
-            <div class="project-details">
-              <p>Cooktura é uma aplicação web inteligente projetada para auxiliar usuários a atingirem seus objetivos nutricionais e culinários de forma personalizada e prática, utilizando Inteligência Artificial (Google Gemini).</p>
-              <h4>Funcionalidades Principais:</h4>
-              <ul>
-                <li><strong>Perfil Personalizado e Metas Nutricionais:</strong> Cadastro detalhado (objetivos, preferências, restrições, habilidades, dados físicos).</li>
-                <li><strong>Cálculos Nutricionais Inteligentes:</strong> Cálculo de TMB, GETD/TDEE (Mifflin-St Jeor), ajuste de meta calórica e sugestão de macros.</li>
-                <li><strong>Plano Alimentar Semanal com IA:</strong> Geração automática de plano de 7 dias (4 refeições) baseado no perfil.</li>
-                <li><strong>Geração de Receitas Instantâneas (IA):</strong>
-                  <ul>
-                    <li>Via Texto: Usuário informa ingredientes e tempo, IA sugere receitas.</li>
-                    <li>Via Foto: IA identifica ingredientes em foto e gera receitas.</li>
-                  </ul>
-                </li>
-                <li><strong>Assistente de Restaurante (IA):</strong> Analisa foto de cardápio e recomenda opções alinhadas aos objetivos.</li>
-                <li><strong>Estimativa de Calorias por Foto (IA Experimental):</strong> Tenta estimar calorias e macros de um prato em foto (com avisos de precisão).</li>
-                <li><strong>Histórico de Consumo:</strong> Registro agregado de consumo diário para comparação com metas.</li>
-                <li><strong>Comunidade NutriChef:</strong> Espaço social para posts, compartilhamento, curtidas e comentários.</li>
-              </ul>
-            </div>
-          </article>
-
-        <!-- Projeto AGNER -->
-        <article class="project animate-on-scroll" data-title="AGNER - Navegador Eficiente" data-category="app,business"> <!-- business pode ser "productivity" -->
-          <img src="static/agner_cover.png" alt="AGNER Navegador" class="project-thumbnail"> <!-- CRIE ESSA IMAGEM -->
-          <div class="project-content">
-            <h3>AGNER Navegador</h3>
-            <p class="project-summary">Navegador web moderno, rápido, leve e personalizável, com baixíssimo consumo de RAM (400MB com 50 abas).</p>
-            <button class="btn-vermais" onclick="openProjectModal(this, ['static/agner_detail1.png'])">Ver Mais</button> <!-- CRIE ESSA IMAGEM -->
-            <div class="project-details">
-              <p>O AGNER é um navegador web moderno, projetado para oferecer uma experiência de navegação otimizada, rápida e altamente personalizável, com foco em desempenho e usabilidade.</p>
-              <h4>Funcionalidades Principais:</h4>
-              <ul>
-                <li><strong>Navegação Rápida e Simples:</strong> Carregamento ágil de sites e conteúdo online.</li>
-                <li><strong>Temas Personalizados:</strong> Variedade de temas (simples, Cyberpunk Neon, Dark, Light).</li>
-                <li><strong>Página Inicial Customizável:</strong> Adicione e remova sites favoritos facilmente.</li>
-                <li><strong>Histórico e Favoritos Organizados:</strong> Acesso rápido e categorização de links.</li>
-                <li><strong>Configurações Avançadas:</strong> Controle sobre JavaScript, bloqueio de anúncios, modo noturno automático.</li>
-                <li><strong>Desempenho Impecável:</strong> Leve e eficiente, consome poucos recursos (ex: 400MB RAM com 50 abas abertas).</li>
-              </ul>
-            </div>
-          </article>
-
-        <!-- Projeto FitProgress -->
-        <article class="project animate-on-scroll" data-title="FitProgress - Gestão de Treino com IA" data-category="IA,health,platform,app">
-          <img src="static/fitprogress_cover.png" alt="FitProgress" class="project-thumbnail"> <!-- CRIE ESSA IMAGEM -->
-          <div class="project-content">
-            <h3>FitProgress</h3>
-            <p class="project-summary">Plataforma integrada para clientes e personais gerenciarem treinos, evolução física e planos assistidos por IA.</p>
-            <button class="btn-vermais" onclick="openProjectModal(this, ['static/fitprogress_detail1.png', 'static/fitprogress_detail2.png'])">Ver Mais</button> <!-- CRIE ESSAS IMAGENS -->
-            <div class="project-details">
-              <p>FitProgress é uma plataforma web robusta para otimizar a gestão do treinamento físico e acompanhamento da evolução, conectando Clientes, Personal Trainers autônomos e de Academia.</p>
-              <h4>Funcionalidades Principais:</h4>
-              <ul>
-                <li><strong>Gestão de Usuários e Perfis:</strong> Clientes, Personal Trainers, Personais de Academia.</li>
-                <li><strong>Cadastro e Gerenciamento de Academias:</strong> Registro e vinculação de personais.</li>
-                <li><strong>Perfil do Cliente:</strong> Dados antropométricos, objetivos, limitações, QR Code/token para vinculação, status de assinatura.</li>
-                <li><strong>Perfil do Personal Trainer:</strong> Biografia, especialidades, taxa, horários, token de vinculação, dashboard de clientes.</li>
-                <li><strong>Acompanhamento Visual de Progresso:</strong> Upload de fotos de progresso (frontal, lateral, posterior) e histórico.</li>
-                <li><strong>Criação e Gestão de Templates de Treino:</strong> Personais criam modelos de treinos.</li>
-                <li><strong>Atribuição e Gerenciamento de Treinos Personalizados:</strong> Atribuição de treinos (templates ou customizados) com validade.</li>
-                <li><strong>Geração de Treinos por IA (Google Gemini):</strong> Sugestões de planos de treino baseados nos dados do cliente, para aprovação do personal.</li>
-                <li><strong>Registro e Acompanhamento da Execução de Treinos:</strong> Clientes registram pesos, repetições, observações. Histórico de logs.</li>
-                <li><strong>Comunicação Direta (Chat):</strong> Mensagens instantâneas cliente-personal com anexos.</li>
-                <li><strong>Registro e Histórico de Medidas Corporais:</strong> Peso, % gordura, circunferências. Histórico detalhado.</li>
-                <li><strong>Dashboards Informativos:</strong>
-                    <ul>
-                        <li>Cliente: Resumo de progresso, medição, gráficos, treinos ativos.</li>
-                        <li>Personal: Lista de clientes, ativos, alertas, mensagens, link/QR Code.</li>
-                    </ul>
-                </li>
-                <li><strong>Sistema de Vinculação Personal-Cliente:</strong> Via link ou código único.</li>
-              </ul>
-            </div>
-          </article>
-
-        <!-- Projetos Legados (Exemplos) -->
+      <div class="project-grid" id="project-grid">
+        <!-- Projeto 1 -->
         <article class="project animate-on-scroll" data-title="Cosmetic Elegance" data-category="landing">
-          <img src="static/cosmeticos1.png" alt="Cosmetic Elegance" class="project-thumbnail">
-          <div class="project-content">
-            <h3>Cosmetic Elegance</h3>
-            <p class="project-summary">Landing page sofisticada para promover produtos de beleza e cuidados com a pele, focada em conversão.</p>
-            <button class="btn-vermais" onclick="openProjectModal(this, ['static/cosmeticos1.png', 'static/cosmeticos2.png', 'static/cosmeticos3.png', 'static/cosmeticos4.png', 'static/cosmeticos5.png'])">Ver Mais</button>
-            <div class="project-details">
-              <p>Esta landing page foi desenvolvida para uma marca de cosméticos premium, com um design elegante e funcional, focado na conversão e experiência do usuário. O objetivo era transmitir sofisticação e confiança, incentivando a compra dos produtos.</p>
-            </div>
+          <img src="static/cosmeticos1.png" alt="Cosmetic Elegance">
+          <h3>Cosmetic Elegance</h3>
+          <p>Landing page sofisticada para promover a beleza e cuidados com a pele.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['static/cosmeticos2.png', 'static/cosmeticos3.png', 'static/cosmeticos4.png', 'static/cosmeticos5.png'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Esta landing page foi desenvolvida para uma marca de cosméticos premium, com um design elegante e funcional, focado na conversão e experiência do usuário.</p>
           </div>
         </article>
 
-        <article class="project animate-on-scroll" data-title="Consultoria Estratégica LP" data-category="landing">
-          <img src="static/consultoria.png" alt="Consultoria Estratégica" class="project-thumbnail">
-           <div class="project-content">
-            <h3>Consultoria Estratégica LP</h3>
-            <p class="project-summary">Landing page para empresa de consultoria, destacando benefícios e expertise para atrair leads qualificados.</p>
-            <button class="btn-vermais" onclick="openProjectModal(this, ['static/consultoria.png', 'static/consultoria1.png', 'static/consultoria2.png', 'static/consultoria3.png', 'static/consultoria4.png', 'static/consultoria5.png'])">Ver Mais</button>
-            <div class="project-details">
-              <p>Esta landing page foi desenvolvida para uma empresa de consultoria empresarial, com o objetivo de apresentar seus serviços de forma clara e convincente, destacando os benefícios de uma assessoria estratégica para o crescimento de negócios.</p>
-            </div>
+        <!-- Projeto 2 -->
+        <article class="project animate-on-scroll" data-title="Consultoria Estratégica" data-category="landing">
+          <img src="static/consultoria.png" alt="Consultoria Estratégica">
+          <h3>Consultoria Estratégica</h3>
+          <p>Landing page sofisticada para promover serviços de consultoria empresarial.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['static/consultoria1.png', 'static/consultoria2.png', 'static/consultoria3.png', 'static/consultoria4.png', 'static/consultoria5.png'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Esta landing page foi desenvolvida para uma empresa de consultoria, destacando os benefícios de uma assessoria estratégica.</p>
           </div>
         </article>
 
-        <article class="project animate-on-scroll" data-title="E-commerce Completo" data-category="platform,business">
-          <img src="static/ecommerce.png" alt="Site Completo E-commerce" class="project-thumbnail">
-          <div class="project-content">
-            <h3>E-commerce Completo</h3>
-            <p class="project-summary">Plataforma de e-commerce robusta e intuitiva, com design responsivo e integração de pagamentos.</p>
-            <button class="btn-vermais" onclick="openProjectModal(this, ['static/ecommerce.png', 'static/ecommerce1.png', 'static/ecommerce2.png', 'static/ecommerce3.png', 'static/ecommerce4.png', 'static/ecommerce5.png', 'static/ecommerce6.png', 'static/ecommerce7.png', 'static/ecommerce8.png', 'static/ecommerce9.png', 'static/ecommerce10.png'])">Ver Mais</button>
-            <div class="project-details">
-              <p>Desenvolvimento de um site de e-commerce completo, oferecendo uma experiência de compra única. Inclui design responsivo, catálogo de produtos dinâmico, carrinho de compras, integração com diversos métodos de pagamento e painel de administração para gerenciamento de pedidos e estoque.</p>
-            </div>
+        <!-- Projeto 3 -->
+        <article class="project animate-on-scroll" data-title="Site Completo E-commerce" data-category="ecommerce">
+          <img src="static/ecommerce.png" alt="Site Completo E-commerce">
+          <h3>Site Completo E-commerce</h3>
+          <p>Plataforma robusta e intuitiva para uma experiência de compra única.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['static/ecommerce1.png', 'static/ecommerce2.png', 'static/ecommerce3.png', 'static/ecommerce4.png', 'static/ecommerce5.png', 'static/ecommerce6.png', 'static/ecommerce7.png', 'static/ecommerce8.png', 'static/ecommerce9.png', 'static/ecommerce10.png'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Desenvolvemos um site de e-commerce completo com design responsivo, integração com métodos de pagamento e suporte em tempo real.</p>
+          </div>
+        </article>
+
+        <!-- Projeto 4 -->
+        <article class="project animate-on-scroll" data-title="Cooktura - App de Receitas Personalizadas" data-category="IA">
+          <img src="static/cooktura1.png" alt="Cooktura - App de Receitas Personalizadas">
+          <h3>Cooktura - App de Receitas Personalizadas</h3>
+          <p>Aplicativo inteligente que cria receitas personalizadas conforme suas preferências.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['static/cooktura1.png', 'static/cooktura2.png'])">Ver Mais</button>
+          <div class="project-details">
+            <p>O app utiliza IA para sugerir receitas baseadas no que você tem em casa e suas preferências alimentares.</p>
+          </div>
+        </article>
+
+        <!-- Projeto 5 -->
+        <article class="project animate-on-scroll" data-title="Sistema de IA para Empreendedores" data-category="IA">
+          <img src="static/ia1.png" alt="Sistema de IA para Empreendedores">
+          <h3>Sistema de IA para Empreendedores</h3>
+          <p>Solução inovadora que auxilia empreendedores no desenvolvimento de estratégias de sucesso.</p>
+          <button class="btn-vermais" onclick="openProjectModal(this, ['static/ia1.png', 'static/ia2.png'])">Ver Mais</button>
+          <div class="project-details">
+            <p>Este sistema de IA ajuda empreendedores a identificar oportunidades e aprimorar suas estratégias de negócio.</p>
           </div>
         </article>
       </div>
       <div class="cta-section">
-        <button onclick="scrollToSection('contact')">Tem uma Ideia? Vamos Realizá-la!</button>
+        <button onclick="scrollToSection('contact')">Entre em Contato</button>
       </div>
     </section>
-
-    <!-- Projetos Open Source -->
-    <section class="open-source-projects section animate-on-scroll" id="open-source" aria-labelledby="opensource-title">
-        <h2 class="section-title" id="opensource-title">Projetos Open Source</h2>
-        <p class="section-subtitle">Acredito no poder da colaboração. Aqui estão alguns projetos que disponibilizei para a comunidade.</p>
-        <div class="project-grid" id="project-grid-opensource">
-            <!-- Projeto UPAÉFLIX -->
-            <article class="project animate-on-scroll" data-title="UPAÉFLIX - Plataforma de Streaming" data-category="platform,app">
-              <img src="static/upaeflix_cover.png" alt="UPAÉFLIX" class="project-thumbnail"> <!-- CRIE ESSA IMAGEM -->
-              <div class="project-content">
-                <h3>UPAÉFLIX</h3>
-                <p class="project-summary">Plataforma de streaming sob demanda com player inteligente, catálogo organizado e painel de admin. (Python/Flask)</p>
-                <button class="btn-vermais" onclick="openProjectModal(this, ['static/upaeflix_detail.png'])">Ver Mais</button> <!-- CRIE ESSA IMAGEM -->
-                <div class="project-details">
-                  <p>UPAÉFLIX é uma plataforma de streaming focada em entretenimento sob demanda, combinando conteúdo organizado, experiência de usuário intuitiva e ferramentas de gerenciamento robustas para administradores. Desenvolvida com Python (Flask), HTML5, CSS3, JavaScript e PostgreSQL.</p>
-                  <h4>Funcionalidades Principais:</h4>
-                  <ul>
-                    <li><strong>Player de Vídeo Inteligente:</strong> Controles avançados (velocidade, salto 10s, tela cheia, mute), overlay de próximo episódio, atualização de progresso, modo off-line detectado.</li>
-                    <li><strong>Detalhes de Conteúdo Rich Media:</strong> Páginas dedicadas com poster, banner, sinopse, ano, duração, categorias, elenco, conteúdo similar e ações (assistir, adicionar à lista, compartilhar).</li>
-                    <li><strong>Sistema de Listas Personalizadas (Watchlist):</strong> Abas filmes/séries, cards interativos, estado vazio com CTAs.</li>
-                    <li><strong>Catálogo Organizado:</strong> Navegação por categorias, grid responsivo, busca por título.</li>
-                    <li><strong>Painel de Administração:</strong> Dashboard com estatísticas, CRUD completo para filmes, séries, episódios, categorias, upload de mídias.</li>
-                  </ul>
-                  <p><strong>Stack Principal:</strong> Python (Flask), HTML5, CSS3, JavaScript, PostgreSQL.</p>
-                  <p><em>Este projeto é open source e pode ser encontrado no meu GitHub (link no rodapé, se disponível).</em></p>
-                </div>
-              </div>
-            </article>
-            <!-- Adicionar mais projetos open source aqui -->
-        </div>
-         <div class="cta-section">
-            <a href="#" target="_blank" class="btn-primary" style="padding: 14px 28px; border-radius: var(--border-radius); text-decoration: none; display:inline-block;">Ver mais no GitHub (Em breve)</a>
-        </div>
-    </section>
-
 
     <!-- Modal de Projeto -->
     <div class="modal" id="project-modal" aria-modal="true" role="dialog">
       <div class="modal-content">
-        <span class="modal-close" onclick="closeModal()" aria-label="Fechar Modal">×</span>
+        <span class="modal-close" onclick="closeModal()">×</span>
         <div class="modal-body">
           <div class="carousel">
-            <div class="carousel-arrow left" onclick="prevImage()" aria-label="Imagem Anterior"><i class="fas fa-chevron-left"></i></div>
-            <div class="carousel-images" id="carousel-images">
-                <!-- Imagens do carrossel são injetadas aqui pelo JS -->
-            </div>
-            <div class="carousel-arrow right" onclick="nextImage()" aria-label="Próxima Imagem"><i class="fas fa-chevron-right"></i></div>
+            <div class="carousel-arrow left" onclick="prevImage()"><i class="fas fa-chevron-left"></i></div>
+            <div class="carousel-images" id="carousel-images"></div>
+            <div class="carousel-arrow right" onclick="nextImage()"><i class="fas fa-chevron-right"></i></div>
           </div>
           <h3 id="modal-title"></h3>
-          <div id="modal-description-content">
-             <!-- Conteúdo da descrição é injetado aqui -->
-          </div>
+          <p id="modal-description"></p>
           <button class="btn-like" onclick="toggleLike(this)"><i class="far fa-heart"></i> Curtir</button>
         </div>
       </div>
     </div>
 
     <!-- Depoimentos -->
-    <section class="testimonials section animate-on-scroll" id="testimonials" aria-labelledby="testimonials-title">
-      <h2 class="section-title" id="testimonials-title">O Que Dizem Meus Clientes</h2>
+    <section class="testimonials animate-on-scroll" id="testimonials" aria-label="Depoimentos">
+      <h2>O Que Dizem Nossos Clientes</h2>
       <div class="testimonial-cards">
         <article class="testimonial-card animate-on-scroll">
-          <p>"O Miguel, mesmo tão jovem, demonstrou um profissionalismo e uma capacidade técnica incríveis. Nossa landing page ficou fantástica e as conversões aumentaram significativamente!"</p>
-          <span>- Ana P., Empreendedora Digital</span>
+          <p>"A parceria com a ViewLab.tech transformou nossa presença digital. As landing pages aumentaram nossa conversão em 50%!"</p>
+          <span>- Cliente Satisfeito</span>
         </article>
         <article class="testimonial-card animate-on-scroll">
-          <p>"A solução com IA que o Miguel desenvolveu para nossa startup otimizou processos que levavam horas. Impressionante a visão e execução dele. Recomendo fortemente!"</p>
-          <span>- Carlos M., CEO de Tech Startup</span>
+          <p>"Soluções inovadoras com IA que realmente fazem a diferença. Recomendo fortemente!"</p>
+          <span>- Empresa Inovadora</span>
         </article>
         <article class="testimonial-card animate-on-scroll">
-          <p>"Design moderno, entrega rápida e um atendimento atencioso. O Miguel realmente entende do assunto e superou nossas expectativas. O site ficou perfeito!"</p>
-          <span>- Juliana S., Gerente de Marketing</span>
+          <p>"Design moderno e atendimento excepcional. O suporte 24/7 é um diferencial incrível."</p>
+          <span>- Startup de Sucesso</span>
         </article>
       </div>
     </section>
 
     <!-- Blog -->
-    <section class="blog section animate-on-scroll" id="blog" aria-labelledby="blog-title">
-      <h2 class="section-title" id="blog-title">Insights & Artigos</h2>
-      <p class="section-subtitle">Compartilhando conhecimento sobre tecnologia, desenvolvimento web e inteligência artificial.</p>
+    <section class="blog animate-on-scroll" id="blog" aria-label="Blog">
+      <h2>Insights & Artigos</h2>
       <div class="blog-cards">
         <article class="blog-card animate-on-scroll">
-          <h3>O Futuro é Agora: Tendências em Web Design para 2025</h3>
-          <div class="meta">10/07/2024 • por Miguel Penha Reis</div>
-          <p>Explore as inovações que estão moldando o design digital, desde microinterações até o uso imersivo de IA e Realidade Aumentada.</p>
+          <h3>Tendências em Web Design 2024</h3>
+          <div class="meta">10/02/2024 • por Ana Silva</div>
+          <p>Descubra as principais inovações e estratégias que estão moldando o futuro do design digital.</p>
         </article>
         <article class="blog-card animate-on-scroll">
-          <h3>Desmistificando a IA: Como Pequenos Negócios Podem se Beneficiar</h3>
-          <div class="meta">05/07/2024 • por Miguel Penha Reis</div>
-          <p>Entenda como integrar soluções de inteligência artificial de forma prática e acessível para otimizar processos e encantar clientes.</p>
+          <h3>Como a IA Pode Impulsionar Seu Negócio</h3>
+          <div class="meta">05/02/2024 • por Carlos Souza</div>
+          <p>Entenda como integrar soluções de inteligência artificial para otimizar processos.</p>
         </article>
         <article class="blog-card animate-on-scroll">
-          <h3>Landing Pages que Vendem: 7 Dicas Essenciais de SEO e UX</h3>
-          <div class="meta">28/06/2024 • por Miguel Penha Reis</div>
-          <p>Aprenda a criar páginas de destino otimizadas para atrair tráfego qualificado e maximizar suas taxas de conversão.</p>
+          <h3>Dicas de SEO para Landing Pages</h3>
+          <div class="meta">28/01/2024 • por Fernanda Lima</div>
+          <p>Saiba como criar páginas otimizadas para atrair tráfego qualificado.</p>
         </article>
       </div>
       <div class="cta-section">
-        <button onclick="alert('Página do blog em desenvolvimento!')">Ver Todos os Artigos</button>
+        <button onclick="scrollToSection('blog')">Leia Mais Artigos</button>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq section animate-on-scroll" id="faq" aria-labelledby="faq-title">
-      <h2 class="section-title" id="faq-title">Perguntas Frequentes</h2>
-      <div class="faq-item animate-on-scroll">
-        <div class="faq-question" onclick="toggleFaq(this.parentElement)" role="button" aria-expanded="false">
-          <h3>Quanto tempo leva para desenvolver um site ou landing page?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <p>O prazo varia conforme a complexidade. Landing pages simples podem levar de 1 a 2 semanas. Sites mais complexos ou soluções com IA, de 3 a 8 semanas ou mais. Sempre forneço um cronograma detalhado após entender o escopo do projeto.</p>
+    <section class="faq animate-on-scroll" id="faq" aria-label="Perguntas Frequentes">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq-item animate-on-scroll" onclick="toggleFaq(this)">
+        <h3>Quanto tempo demora para desenvolver um site?</h3>
+        <p>O prazo varia de acordo com a complexidade do projeto, mas em média nossos sites ficam prontos em 1 a 4 semanas.</p>
       </div>
-      <div class="faq-item animate-on-scroll">
-         <div class="faq-question" onclick="toggleFaq(this.parentElement)" role="button" aria-expanded="false">
-          <h3>Como funciona o suporte técnico após o lançamento do projeto?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <p>Ofereço um período de suporte gratuito (geralmente 30 dias) para correção de eventuais bugs ou pequenos ajustes. Após esse período, podemos combinar um plano de manutenção e suporte contínuo, se necessário.</p>
+      <div class="faq-item animate-on-scroll" onclick="toggleFaq(this)">
+        <h3>Como funciona o suporte pós-lançamento?</h3>
+        <p>Oferecemos suporte 24/7 e revisões gratuitas durante os primeiros 7 dias após o lançamento.</p>
       </div>
-      <div class="faq-item animate-on-scroll">
-        <div class="faq-question" onclick="toggleFaq(this.parentElement)" role="button" aria-expanded="false">
-          <h3>Você trabalha com projetos que envolvem Inteligência Artificial personalizada?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <p>Sim! Tenho experiência com diversas APIs de IA (como Google Gemini) e posso desenvolver soluções personalizadas para automatizar tarefas, gerar conteúdo, analisar dados ou criar experiências interativas únicas para o seu negócio.</p>
-      </div>
-       <div class="faq-item animate-on-scroll">
-        <div class="faq-question" onclick="toggleFaq(this.parentElement)" role="button" aria-expanded="false">
-          <h3>Qual o processo para iniciar um projeto com você?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <p>O primeiro passo é entrar em contato através do formulário abaixo ou WhatsApp. Agendaremos uma conversa para entender suas necessidades e objetivos. Em seguida, preparo uma proposta detalhada com escopo, prazos e investimento. Com a aprovação, iniciamos o desenvolvimento!</p>
+      <div class="faq-item animate-on-scroll" onclick="toggleFaq(this)">
+        <h3>Posso solicitar funcionalidades personalizadas?</h3>
+        <p>Com certeza! Trabalhamos de forma personalizada para atender às suas necessidades.</p>
       </div>
       <div class="cta-section">
-        <button onclick="scrollToSection('contact')">Ainda Tem Dúvidas? Fale Comigo!</button>
+        <button onclick="scrollToSection('contact')">Ainda Tem Dúvidas? Fale Conosco</button>
       </div>
     </section>
 
     <!-- Contato -->
-    <section class="contact section animate-on-scroll" id="contact" aria-labelledby="contact-title">
-      <h2 class="section-title" id="contact-title">Vamos Criar Algo Incrível?</h2>
-      <p class="section-subtitle">Envie sua mensagem e vamos transformar sua ideia em realidade. Responderei o mais breve possível!</p>
+    <section class="contact animate-on-scroll" id="contact" aria-label="Contato">
+      <h2>Fale Conosco</h2>
       <form id="contact-form" onsubmit="handleFormSubmit(event)" aria-label="Formulário de Contato">
-        <input type="text" id="nome" name="Nome" placeholder="Seu Nome Completo" required aria-label="Seu Nome">
-        <input type="email" id="email" name="Email" placeholder="Seu Melhor E-mail" required aria-label="Seu E-mail">
-        <input type="tel" id="telefone" name="Telefone" placeholder="Seu Telefone (WhatsApp)" required aria-label="Seu Telefone">
-        <textarea id="mensagem" name="Mensagem" rows="5" placeholder="Conte-me sobre seu projeto ou dúvida..." required aria-label="Sua Mensagem"></textarea>
+        <input type="text" id="nome" name="Nome" placeholder="Seu Nome" required aria-label="Seu Nome">
+        <input type="email" id="email" name="Email" placeholder="Seu E-mail" required aria-label="Seu E-mail">
+        <input type="tel" id="telefone" name="Telefone" placeholder="Seu Telefone" required aria-label="Seu Telefone">
+        <textarea id="mensagem" name="Mensagem" rows="4" placeholder="Sua Mensagem" required aria-label="Sua Mensagem"></textarea>
         <button type="submit">Enviar Mensagem</button>
       </form>
     </section>
 
   <!-- Footer -->
   <footer>
-    <p>© <span id="currentYear"></span> ViewLab.tech – Por Miguel Penha Reis.</p>
-    <p>Transformando ideias em realidade digital com inovação e paixão.</p>
-    <p>Contato direto: <a href="tel:+5535998930953">(35) 99893-0953</a> | <a href="mailto:contato@viewlab.tech">contato@viewlab.tech</a> (sugestão)</p>
-    <div class="footer-social-icons">
-        <a href="https://github.com/seu-usuario-github" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/seu-usuario-linkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://instagram.com/seu-usuario-instagram" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    </div>
+    <p>© 2025 ViewLab.tech – Revolucione sua presença digital com inovação e paixão.</p>
+    <p>(35) 99893-0953 | Miguel Penha Reis</p>
   </footer>
 
   <!-- Scripts -->
   <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
     let currentImageIndex = 0;
-    let images = []; // Array de imagens para o carrossel do modal
+    let images = [];
 
     // Loading Bar Animation
     window.addEventListener('load', function() {
       const loadingBar = document.getElementById('loading-bar');
       loadingBar.style.width = '100%';
-      setTimeout(() => { loadingBar.style.opacity = '0'; loadingBar.style.display = 'none'; }, 1200);
+      setTimeout(() => { loadingBar.style.display = 'none'; }, 1000);
     });
 
-    // Back-to-Top Visibility & Smooth Scroll
-    const topBtn = document.getElementById('back-to-top');
+    // Back-to-Top Visibility
     window.addEventListener('scroll', function() {
-      topBtn.style.display = (window.pageYOffset > 300) ? 'flex' : 'none'; // display: flex para centralizar ícone
+      const topBtn = document.getElementById('back-to-top');
+      topBtn.style.display = (window.pageYOffset > 300) ? 'block' : 'none';
     });
-    function scrollToTopSmooth() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+
+    // Smooth Scroll para as seções
     function scrollToSection(id) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        if (navMenu.classList.contains('active')) { // Fecha menu mobile ao clicar
-            navMenu.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-      }
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
 
     // Menu Hamburguer Toggle
@@ -1514,159 +1313,96 @@
     const navMenu = document.getElementById('nav-menu');
     menuToggle.addEventListener('click', function() {
       navMenu.classList.toggle('active');
-      const isActive = navMenu.classList.contains('active');
-      menuToggle.setAttribute('aria-expanded', isActive);
-      if (isActive) {
-        menuToggle.innerHTML = '<i class="fas fa-times"></i>'; // Ícone de fechar
-      } else {
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>'; // Ícone de menu
-      }
     });
-
-    // Fechar menu ao clicar fora (opcional, mas bom para UX)
-    document.addEventListener('click', function(event) {
-        if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
-
 
     // Sistema de Busca e Filtragem de Projetos
     const searchInput = document.getElementById('project-search');
     const categorySelect = document.getElementById('category-filter');
-    const projectGridMain = document.getElementById('project-grid-main');
-    const projectGridOpenSource = document.getElementById('project-grid-opensource');
+    const projectGrid = document.getElementById('project-grid');
 
     function filterProjects() {
-      const searchQuery = searchInput.value.toLowerCase().trim();
+      const searchQuery = searchInput.value.toLowerCase();
       const selectedCategory = categorySelect.value;
+      const projects = projectGrid.getElementsByClassName('project');
 
-      function applyFilter(grid) {
-          if (!grid) return;
-          const projects = grid.getElementsByClassName('project');
-          Array.from(projects).forEach(project => {
-            const title = project.getAttribute('data-title').toLowerCase();
-            const category = project.getAttribute('data-category'); // pode ter múltiplas: "IA,education"
-            const matchesCategory = selectedCategory === 'all' || (category && category.toLowerCase().includes(selectedCategory));
-            const matchesSearch = title.includes(searchQuery) || searchQuery === '';
-
-            if (matchesCategory && matchesSearch) {
-              project.style.display = 'flex'; // ou 'block' / 'grid' dependendo do seu .project
-            } else {
-              project.style.display = 'none';
-            }
-          });
-      }
-      applyFilter(projectGridMain);
-      // Se a busca/filtro deve afetar a seção open source também:
-      // applyFilter(projectGridOpenSource); // Descomente se quiser filtrar ambas as seções
+      Array.from(projects).forEach(project => {
+        const title = project.getAttribute('data-title').toLowerCase();
+        const category = project.getAttribute('data-category');
+        if ((title.includes(searchQuery) || searchQuery === '') &&
+            (selectedCategory === 'all' || category === selectedCategory)) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
     }
-    if (searchInput) searchInput.addEventListener('keyup', filterProjects);
-    if (categorySelect) categorySelect.addEventListener('change', filterProjects);
 
+    searchInput.addEventListener('keyup', filterProjects);
+    categorySelect.addEventListener('change', filterProjects);
 
-    // Modal do Projeto
-    const projectModal = document.getElementById('project-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescriptionContainer = document.getElementById('modal-description-content');
-    const carouselImagesContainer = document.getElementById('carousel-images');
-
+    // Abrir Modal com Carrossel
     function openProjectModal(button, projectImages) {
-      const projectArticle = button.closest('.project');
-      const title = projectArticle.querySelector('h3').textContent;
-      // Pega o HTML interno da div .project-details para manter a formatação (listas, etc)
-      const descriptionHTML = projectArticle.querySelector('.project-details').innerHTML;
+      const project = button.closest('.project');
+      const title = project.querySelector('h3').textContent;
+      const description = project.querySelector('.project-details p').textContent;
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      const carouselImages = document.getElementById('carousel-images');
 
       modalTitle.textContent = title;
-      modalDescriptionContainer.innerHTML = descriptionHTML; // Injeta o HTML
-      images = projectImages; // Array de URLs das imagens
+      modalDescription.textContent = description;
+      images = projectImages;
       currentImageIndex = 0;
 
-      carouselImagesContainer.innerHTML = ''; // Limpa imagens anteriores
-      if (images && images.length > 0) {
-        images.forEach((imgSrc, index) => {
-          const img = document.createElement('img');
-          img.src = imgSrc;
-          img.alt = `${title} - Detalhe ${index + 1}`;
-          img.classList.add('carousel-image'); // Para estilização CSS
-          if (index === 0) img.classList.add('active');
-          carouselImagesContainer.appendChild(img);
-        });
-        // Mostra/esconde setas se tiver mais de 1 imagem
-        const arrows = projectModal.querySelectorAll('.carousel-arrow');
-        arrows.forEach(arrow => arrow.style.display = images.length > 1 ? 'block' : 'none');
-      } else {
-         // Se não houver imagens, esconde o carrossel ou mostra placeholder
-        carouselImagesContainer.innerHTML = '<p style="text-align:center; padding: 20px;">Sem imagens detalhadas para este projeto.</p>';
-        const arrows = projectModal.querySelectorAll('.carousel-arrow');
-        arrows.forEach(arrow => arrow.style.display = 'none');
-      }
+      carouselImages.innerHTML = '';
+      images.forEach((imgSrc, index) => {
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = `Detalhe ${index + 1}`;
+        img.classList.add('carousel-image');
+        if (index === 0) img.classList.add('active');
+        carouselImages.appendChild(img);
+      });
 
-      projectModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Impede scroll do body
+      document.getElementById('project-modal').style.display = 'flex';
     }
 
+    // Fechar Modal
     function closeModal() {
-      projectModal.style.display = 'none';
-      document.body.style.overflow = 'auto'; // Restaura scroll do body
+      document.getElementById('project-modal').style.display = 'none';
     }
 
-    // Navegação do Carrossel do Modal
-    function updateCarouselImage() {
-        const allCarouselImages = carouselImagesContainer.querySelectorAll('.carousel-image');
-        allCarouselImages.forEach((img, index) => {
-            img.classList.toggle('active', index === currentImageIndex);
-        });
-    }
-
+    // Navegar para a Imagem Anterior
     function prevImage() {
-      if (!images || images.length <= 1) return;
+      const carouselImages = document.querySelectorAll('.carousel-image');
+      carouselImages[currentImageIndex].classList.remove('active');
       currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-      updateCarouselImage();
+      carouselImages[currentImageIndex].classList.add('active');
     }
 
+    // Navegar para a Próxima Imagem
     function nextImage() {
-      if (!images || images.length <= 1) return;
+      const carouselImages = document.querySelectorAll('.carousel-image');
+      carouselImages[currentImageIndex].classList.remove('active');
       currentImageIndex = (currentImageIndex + 1) % images.length;
-      updateCarouselImage();
+      carouselImages[currentImageIndex].classList.add('active');
     }
 
-    // Fechar modal ao clicar fora do conteúdo ou com ESC
-    projectModal.addEventListener('click', (event) => {
-        if (event.target === projectModal) { // Se o clique foi no fundo do modal
-            closeModal();
-        }
-    });
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && projectModal.style.display === 'flex') {
-            closeModal();
-        }
-    });
-
-
-    // Alternar Curtida (Like)
+    // Alternar Curtida
     function toggleLike(button) {
       const icon = button.querySelector("i");
-      button.classList.toggle('liked');
       if (icon.classList.contains("far")) {
         icon.classList.remove("far");
         icon.classList.add("fas");
-        button.innerHTML = '<i class="fas fa-heart"></i> Curtido';
       } else {
         icon.classList.remove("fas");
         icon.classList.add("far");
-        button.innerHTML = '<i class="far fa-heart"></i> Curtir';
       }
     }
 
     // FAQ Toggle
     function toggleFaq(element) {
       element.classList.toggle('active');
-      const questionDiv = element.querySelector('.faq-question');
-      const isExpanded = element.classList.contains('active');
-      questionDiv.setAttribute('aria-expanded', isExpanded);
     }
 
     // Formulário de Contato com WhatsApp
@@ -1676,20 +1412,18 @@
       const email = document.getElementById('email').value;
       const telefone = document.getElementById('telefone').value;
       const mensagem = document.getElementById('mensagem').value;
-      const whatsappMessage = `Olá Miguel, meu nome é ${nome}.\n\nInteresse: ${mensagem}\n\nContato:\nE-mail: ${email}\nTelefone: ${telefone}`;
-      const encodedMessage = encodeURIComponent(whatsappMessage);
-      const whatsappUrl = `https://wa.me/5535998930953?text=${encodedMessage}`; // SEU NÚMERO AQUI
+      const message = `Nome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone}\nMensagem: ${mensagem}`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/5535998930953?text=${encodedMessage}`;
       window.open(whatsappUrl, '_blank');
-      event.target.reset(); // Limpa o formulário
     }
 
     // Animação on-scroll
-    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 }; // Trigger com 10% visível
-    const observer = new IntersectionObserver((entries, observerInstance) => {
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if(entry.isIntersecting) {
           entry.target.classList.add('in-view');
-          observerInstance.unobserve(entry.target); // Opcional: parar de observar após animar
         }
       });
     }, observerOptions);
@@ -1697,107 +1431,93 @@
     document.querySelectorAll('.animate-on-scroll').forEach(elem => {
       observer.observe(elem);
     });
+  </script>
 
-
-    // JS para o carrossel de projetos horizontal (se for usado)
-    // Este código é para um carrossel horizontal que mostra múltiplos projetos por slide.
-    // Se você preferir o grid CSS que já está funcional, pode remover este trecho.
-    /*
+  <!-- ======== INÍCIO - Código do Carrossel de Projetos ======== -->
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const projectGridContainer = document.querySelector(".projects .project-grid"); // Target o grid específico
+      // Armazena o conteúdo original da grid para reconfigurar o carrossel quando necessário
+      const projectGrid = document.getElementById("project-grid");
+      const originalProjectsHTML = projectGrid.innerHTML;
+      let currentProjectsPerSlide = null;
 
-      if (projectGridContainer && projectGridContainer.children.length > 0) {
-        const originalProjectsHTML = projectGridContainer.innerHTML; // Salva os projetos originais
-        let currentProjectsPerSlideConfig = null;
+      function setupProjectsCarousel() {
+        // Define quantos projetos por slide: 1 para telas <=768px; 3 para telas maiores.
+        let projectsPerSlide = window.innerWidth <= 768 ? 1 : 3;
+        if (projectsPerSlide === currentProjectsPerSlide) return;
+        currentProjectsPerSlide = projectsPerSlide;
 
-        function setupProjectsCarousel() {
-          let projectsPerSlide = 3; // Default para desktop
-          if (window.innerWidth <= 992) projectsPerSlide = 2;
-          if (window.innerWidth <= 600) projectsPerSlide = 1;
+        // Restaura os projetos originais
+        projectGrid.innerHTML = originalProjectsHTML;
+        const projects = Array.from(projectGrid.getElementsByClassName("project"));
+        if (projects.length === 0) return;
 
-          // Se a configuração não mudou, não refaz o carrossel
-          if (projectsPerSlide === currentProjectsPerSlideConfig) return;
-          currentProjectsPerSlideConfig = projectsPerSlide;
+        const totalSlides = Math.ceil(projects.length / projectsPerSlide);
 
-          projectGridContainer.innerHTML = originalProjectsHTML; // Restaura
-          const projects = Array.from(projectGridContainer.querySelectorAll(".project"));
+        // Cria a estrutura do carrossel
+        const carouselContainer = document.createElement("div");
+        carouselContainer.classList.add("projetos-carrossel");
+        const slidesContainer = document.createElement("div");
+        slidesContainer.classList.add("slides-container");
 
-          if (projects.length === 0) return;
-
-          const totalSlides = Math.ceil(projects.length / projectsPerSlide);
-          if (totalSlides <= 1 && projects.length <= projectsPerSlide) { // Não precisa de carrossel
-             projectGridContainer.style.display = 'grid'; // Garante que é grid
-             if (projectGridContainer.querySelector('.projetos-carrossel')) {
-                projectGridContainer.innerHTML = originalProjectsHTML; // Restaura se já foi carrossel
-             }
-             return;
+        // Agrupa os projetos em slides
+        for (let i = 0; i < totalSlides; i++) {
+          const slide = document.createElement("div");
+          slide.classList.add("slide-projeto");
+          for (let j = i * projectsPerSlide; j < (i * projectsPerSlide) + projectsPerSlide && j < projects.length; j++) {
+            slide.appendChild(projects[j]);
           }
-
-
-          const carouselWrapper = document.createElement("div");
-          carouselWrapper.classList.add("projetos-carrossel");
-          const slidesContainer = document.createElement("div");
-          slidesContainer.classList.add("slides-container");
-
-          for (let i = 0; i < totalSlides; i++) {
-            const slide = document.createElement("div");
-            slide.classList.add("slide-projeto");
-            slide.style.setProperty('--projects-per-slide', projectsPerSlide); // CSS Var for grid columns
-
-            for (let j = 0; j < projectsPerSlide; j++) {
-              const projectIndex = i * projectsPerSlide + j;
-              if (projects[projectIndex]) {
-                slide.appendChild(projects[projectIndex].cloneNode(true)); // Clona para não remover do original
-              } else {
-                // Opcional: Adicionar placeholder se slide incompleto
-                // const placeholder = document.createElement('div');
-                // placeholder.classList.add('project-placeholder');
-                // slide.appendChild(placeholder);
-              }
-            }
-            slidesContainer.appendChild(slide);
-          }
-
-          projectGridContainer.innerHTML = ""; // Limpa o grid original
-          carouselWrapper.appendChild(slidesContainer);
-
-          if (totalSlides > 1) {
-            const prevButton = document.createElement("button");
-            prevButton.classList.add("carousel-nav", "prev");
-            prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
-            prevButton.setAttribute('aria-label', 'Slide Anterior');
-            const nextButton = document.createElement("button");
-            nextButton.classList.add("carousel-nav", "next");
-            nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
-            nextButton.setAttribute('aria-label', 'Próximo Slide');
-            carouselWrapper.appendChild(prevButton);
-            carouselWrapper.appendChild(nextButton);
-
-            let currentSlide = 0;
-            function updateCarouselTransform() {
-              slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-            }
-
-            prevButton.addEventListener("click", function() {
-              currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-              updateCarouselTransform();
-            });
-
-            nextButton.addEventListener("click", function() {
-              currentSlide = (currentSlide + 1) % totalSlides;
-              updateCarouselTransform();
-            });
-          }
-          projectGridContainer.appendChild(carouselWrapper);
-          projectGridContainer.style.display = 'block'; // Mudar de grid para block para o carrossel funcionar
+          slidesContainer.appendChild(slide);
         }
 
-        setupProjectsCarousel();
-        window.addEventListener("resize", setupProjectsCarousel);
-      }
-    });
-    */
+        // Se houver mais de um slide e o último estiver incompleto,
+        // clona o último projeto do slide anterior e insere-o no início do último slide
+        if (totalSlides > 1) {
+          const lastSlide = slidesContainer.lastChild;
+          if (lastSlide.childElementCount < projectsPerSlide) {
+            const previousSlide = slidesContainer.children[totalSlides - 2];
+            if (previousSlide && previousSlide.lastElementChild) {
+              const cloneProject = previousSlide.lastElementChild.cloneNode(true);
+              lastSlide.insertBefore(cloneProject, lastSlide.firstChild);
+            }
+          }
+        }
 
+        projectGrid.innerHTML = "";
+        carouselContainer.appendChild(slidesContainer);
+
+        // Cria botões de navegação
+        const prevButton = document.createElement("button");
+        prevButton.classList.add("carousel-nav", "prev");
+        prevButton.innerHTML = "&lt;";
+        const nextButton = document.createElement("button");
+        nextButton.classList.add("carousel-nav", "next");
+        nextButton.innerHTML = "&gt;";
+        carouselContainer.appendChild(prevButton);
+        carouselContainer.appendChild(nextButton);
+
+        projectGrid.appendChild(carouselContainer);
+
+        let currentSlide = 0;
+        function updateCarousel() {
+          slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        prevButton.addEventListener("click", function() {
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+          updateCarousel();
+        });
+
+        nextButton.addEventListener("click", function() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateCarousel();
+        });
+      }
+
+      setupProjectsCarousel();
+      window.addEventListener("resize", setupProjectsCarousel);
+    });
   </script>
+  <!-- ======== FIM - Código do Carrossel de Projetos ======== -->
 </body>
 </html>
